@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000420;
+  --foreground: #ffffff;
+  --card-bg: rgba(0, 15, 92, 0.6);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-hover-border: #0A39F0;
+  
+  --primary-blue: #00178A;
+  --accent-blue: #0A39F0;
+  --glow-blue: rgba(10, 57, 240, 0.3);
+  --muted-text: #b5bde2;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-card-hover-border: var(--card-hover-border);
+  --color-primary-blue: var(--primary-blue);
+  --color-accent-blue: var(--accent-blue);
+  --color-muted-text: var(--muted-text);
+  
+  --font-sans: var(--font-inter), "Inter Placeholder", sans-serif;
+  --font-display: var(--font-roboto), sans-serif;
+  --font-mono: "Fira Code", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base custom styles */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Premium micro-interactions & utility classes */
+.glow-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 15, 92, 0.8) 0%, rgba(0, 23, 138, 0.3) 100%);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-card:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: 0 0 40px 0 var(--glow-blue);
+  transform: translateY(-4px);
+}
+
+/* Subtle background grid noise similar to Karpathy and Vercel sites */
+.bg-grid-noise {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.bg-radial-gradient {
+  background: radial-gradient(circle 800px at 50% -200px, rgba(10, 57, 240, 0.2), transparent 80%);
+}
+
+.bg-bottom-radial-gradient {
+  background: radial-gradient(circle 600px at 50% 120%, rgba(10, 57, 240, 0.3), transparent 80%);
+}
+
+/* Hide scrollbars but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animated marquees for integration logos */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Text selections matching the dark first vibe */
+::selection {
+  background-color: var(--accent-blue);
+  color: #ffffff;
+}
+
+/* Smooth floating animation for elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Line background similar to page 1 columns in Framer */
+.bg-column-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 20%;
+  opacity: 0.8;
+}
+
+
