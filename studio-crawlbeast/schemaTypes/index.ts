@@ -9,6 +9,7 @@ import blockRichContent from './blocks/richContent'
 import blockChangelog from './blocks/changelog'
 import page from './page'
 import settings from './settings'
+import lead from './leads'
 
 export const schemaTypes = [
   seoSettings,
@@ -22,4 +23,5 @@ export const schemaTypes = [
   blockChangelog,
   page,
   settings,
+  lead,
 ]
