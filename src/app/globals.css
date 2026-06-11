@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-primary: #0676FE;
+  --color-secondary: #09ABFE;
+  --color-accent: #3855D8;
+  --color-dark-bg: #07090E;
+  --color-card-bg: #0e1320;
+  --color-card-bg-hover: #161e31;
+  
+  --font-sans: 'Poppins', var(--font-geist-sans), sans-serif;
+  --font-mono: 'JetBrains Mono', var(--font-geist-mono), monospace;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --animate-scroll-marquee: scrollMarquee 25s linear infinite;
+  
+  @keyframes scrollMarquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  --background: #07090E;
+  --foreground: #f8fafc;
 }
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Background Grid Pattern */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center top;
+}
+
+.radial-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(6, 118, 254, 0.08) 0%, rgba(9, 171, 254, 0.01) 50%, transparent 100%);
+  filter: blur(80px);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07090E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Custom Text Scramble */
+.letter-scramble {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Global Styling Refinements */
+html {
+  font-size: 16.8px; /* Scales all rem-based typography up by 5% */
+}
+
+button, 
+.btn,
+a.btn,
+input[type="submit"],
+button[type="submit"] {
+  border-radius: 12px !important; /* Forces curved button edges globally */
+}
+
