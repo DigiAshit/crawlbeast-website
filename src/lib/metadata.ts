@@ -58,7 +58,13 @@ export async function getPageMetadata(seo: SeoSettings | undefined, defaultTitle
     title,
     description,
     icons: {
-      icon: '/crawlBeast.png',
+      icon: [
+        { url: "/favicon.ico" },
+        { url: "/favicon.png", type: "image/png" },
+        { url: "/crawlBeast.png", type: "image/png" },
+      ],
+      shortcut: "/favicon.ico",
+      apple: "/crawlBeast.png",
     },
     alternates: canonical ? { canonical } : undefined,
     robots: {

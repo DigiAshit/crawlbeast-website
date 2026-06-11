@@ -22,7 +22,13 @@ export const metadata: Metadata = {
   title: "CrawlBeast | Turn SEO Insights Into Revenue",
   description: "Run powerful desktop SEO audits locally. Analyze sitemaps, uncover rendering errors, index broken links, and audit images with speed.",
   icons: {
-    icon: "/crawlBeast.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/crawlBeast.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/crawlBeast.png",
   },
 };
 
