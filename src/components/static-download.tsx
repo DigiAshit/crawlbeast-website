@@ -48,6 +48,17 @@ export default function StaticDownload() {
 
   const handleDownload = (platform: "windows" | "mac") => {
     setDownloading(platform);
+    
+    // Create and click anchor to trigger real download
+    const link = document.createElement("a");
+    link.href = platform === "windows"
+      ? "https://github.com/DigiAshit/crawlbeast-download/releases/download/v1/CrawlBeast.Windows.zip"
+      : "https://github.com/DigiAshit/crawlbeast-download/releases/download/v1/CrawlBeast.MAC.dmg.zip";
+    link.download = platform === "windows" ? "CrawlBeast.Windows.zip" : "CrawlBeast.MAC.dmg.zip";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
     setTimeout(() => {
       setDownloading(null);
       setSuccess(platform);
@@ -119,7 +130,7 @@ export default function StaticDownload() {
             <button
               onClick={() => handleDownload("windows")}
               disabled={downloading !== null}
-              className="w-full inline-flex items-center justify-center gap-1.5 rounded-lg bg-accent-blue hover:bg-blue-600 transition-colors py-3 text-xs font-semibold text-white disabled:opacity-50 cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-accent-blue hover:bg-blue-600 transition-colors py-3 text-xs font-semibold text-white disabled:opacity-50 cursor-pointer"
             >
               {downloading === "windows" ? (
                 <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
@@ -146,7 +157,7 @@ export default function StaticDownload() {
             <button
               onClick={() => handleDownload("mac")}
               disabled={downloading !== null}
-              className="w-full inline-flex items-center justify-center gap-1.5 rounded-lg bg-accent-blue hover:bg-blue-600 transition-colors py-3 text-xs font-semibold text-white disabled:opacity-50 cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-1.5 rounded-xl bg-accent-blue hover:bg-blue-600 transition-colors py-3 text-xs font-semibold text-white disabled:opacity-50 cursor-pointer"
             >
               {downloading === "mac" ? (
                 <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />

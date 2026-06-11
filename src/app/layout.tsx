@@ -4,7 +4,6 @@ import { PopupProvider } from "@/components/PopupContext";
 import PopupDialog from "@/components/PopupDialog";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import PageLoader from "@/components/PageLoader";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -37,9 +36,6 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-[#07090E] text-[#F8FAFC]">
         <PopupProvider>
-          {/* Welcome Flash Loader */}
-          <PageLoader />
-          
           {/* Download Dialog Modal */}
           <PopupDialog />
 

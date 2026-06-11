@@ -10,24 +10,61 @@ const PopupDialog: React.FC = () => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !email) return;
+    setError("");
+
+    if (!name || !name.trim()) {
+      setError("Name is required");
+      return;
+    }
+    if (!email || !email.trim()) {
+      setError("Email is required");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Email must be valid");
+      return;
+    }
 
     setIsLoading(true);
-    // Simulate API request
-    setTimeout(() => {
+
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim().toLowerCase(),
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Submission failed");
+      }
+
       setIsLoading(false);
       setIsSubmitted(true);
-      // Simulate file download trigger after a brief delay
+      
+      // Delay closing modal and redirecting
       setTimeout(() => {
         setIsSubmitted(false);
         setName("");
         setEmail("");
         closePopup();
-      }, 3000);
-    }, 1200);
+        window.location.href = `/download?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
+      }, 1500);
+    } catch (err: any) {
+      setIsLoading(false);
+      setError(err.message || "Failed to submit lead");
+    }
   };
 
   return (
@@ -116,6 +153,10 @@ const PopupDialog: React.FC = () => {
                       />
                     </div>
                   </div>
+
+                  {error && (
+                    <p className="text-xs text-red-500 text-left px-1 mb-3">{error}</p>
+                  )}
 
                   {/* Submit Button */}
                   <button
