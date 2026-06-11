@@ -4,7 +4,7 @@ import { usePopup } from "./PopupContext";
 import CrawlSimulation from "./CrawlSimulation";
 import { 
   ArrowUpRight, Star, ArrowRight, Check,
-  Clock, Zap, Sparkles, Plus 
+  Clock, Zap, Sparkles, Plus, Cpu, Globe
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -187,13 +187,13 @@ const StaticHomepage: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 mb-3 w-full sm:w-auto">
             <button
               onClick={openPopup}
-              className="w-full sm:w-auto bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3.5 px-8 rounded-full text-sm cursor-pointer shadow-lg shadow-primary/20 hover:brightness-110 transition-all active:scale-95"
+              className="w-full sm:w-auto bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3.5 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/20 hover:brightness-110 transition-all active:scale-95"
             >
               Start Your Free Audit
             </button>
             <button
               onClick={openPopup}
-              className="w-full sm:w-auto bg-white/5 border border-white/10 hover:border-zinc-700 text-white font-semibold py-3.5 px-8 rounded-full text-sm cursor-pointer transition-colors"
+              className="w-full sm:w-auto bg-white/5 border border-white/10 hover:border-zinc-700 text-white font-semibold py-3.5 px-8 rounded-xl text-sm cursor-pointer transition-colors"
             >
               Watch Demo
             </button>
@@ -243,7 +243,7 @@ const StaticHomepage: React.FC = () => {
           <div className="text-center mt-12">
             <button
               onClick={openPopup}
-              className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-full text-sm cursor-pointer shadow-lg shadow-primary/15 transition-transform active:scale-95"
+              className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/15 transition-transform active:scale-95"
             >
               Download Now
             </button>
@@ -373,7 +373,7 @@ const StaticHomepage: React.FC = () => {
           <div className="text-center mt-12">
             <button
               onClick={openPopup}
-              className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-full text-sm cursor-pointer shadow-lg shadow-primary/15 transition-transform active:scale-95"
+              className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/15 transition-transform active:scale-95"
             >
               Get Started Today
             </button>
@@ -749,7 +749,7 @@ const StaticHomepage: React.FC = () => {
 
                   <button
                     onClick={openPopup}
-                    className={`w-full py-3.5 px-6 rounded-lg text-sm font-semibold transition-all cursor-pointer active:scale-95 ${
+                    className={`w-full py-3.5 px-6 rounded-xl text-sm font-semibold transition-all cursor-pointer active:scale-95 ${
                       plan.featured
                         ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/10"
                         : "bg-white/5 border border-white/5 hover:border-zinc-700 text-white"
@@ -828,13 +828,13 @@ const StaticHomepage: React.FC = () => {
             <div className="flex gap-4">
               <button
                 onClick={openPopup}
-                className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-full text-sm cursor-pointer shadow-lg shadow-primary/25 hover:brightness-110 active:scale-95 transition-all"
+                className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/25 hover:brightness-110 active:scale-95 transition-all"
               >
                 Download Now
               </button>
               <button
                 onClick={() => window.location.href = '/pricing'}
-                className="bg-white/5 border border-white/10 hover:border-zinc-700 text-white font-semibold py-3 px-8 rounded-full text-sm cursor-pointer transition-colors"
+                className="bg-white/5 border border-white/10 hover:border-zinc-700 text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer transition-colors"
               >
                 View Pricing
               </button>

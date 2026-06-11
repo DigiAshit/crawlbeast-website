@@ -78,7 +78,7 @@ const Header: React.FC = () => {
             {/* Header Button */}
             <button
               onClick={openPopup}
-              className="bg-white hover:bg-zinc-200 text-[#07090E] font-bold text-xs py-2.5 px-4 rounded-full flex items-center gap-1.5 transition-all cursor-pointer shadow-lg shadow-white/5 active:scale-95"
+              className="bg-white hover:bg-zinc-200 text-[#07090E] font-bold text-xs py-2.5 px-4 rounded-xl flex items-center gap-1.5 transition-all cursor-pointer shadow-lg shadow-white/5 active:scale-95"
             >
               Download Now
               <ArrowUpRight className="h-3.5 w-3.5" />
@@ -124,7 +124,7 @@ const Header: React.FC = () => {
                 setIsOpen(false);
                 openPopup();
               }}
-              className="w-full bg-white hover:bg-zinc-200 text-[#07090E] font-bold py-3 px-6 rounded-full text-sm transition-transform active:scale-95 flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-white/5"
+              className="w-full bg-white hover:bg-zinc-200 text-[#07090E] font-bold py-3 px-6 rounded-xl text-sm transition-transform active:scale-95 flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-white/5"
             >
               Download Now
               <ArrowUpRight className="h-4 w-4" />

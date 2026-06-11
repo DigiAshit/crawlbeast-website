@@ -74,14 +74,16 @@ const plans = [
       "Crawl up to 1,000 URLs",
       "Up to 5 projects",
       "Core SEO checks (meta, links, images, etc.)",
-      "Community support"
+      "Community support",
+      "All future features included",
+      "Email Support"
     ]
   },
   {
     name: "Pro Plan",
     desc: "For freelancers and SEO professionals.",
-    monthlyPrice: 39,
-    yearlyPrice: 29,
+    monthlyPrice: 12,
+    yearlyPrice: 9,
     buttonText: "Start Now",
     popular: true,
     features: [
@@ -89,14 +91,15 @@ const plans = [
       "Up to 100 projects",
       "All SEO checks",
       "Faster crawling performance",
-      "Email support"
+      "All future features included",
+      "Email Support"
     ]
   },
   {
     name: "Advanced Plan",
     desc: "For agencies and heavy users.",
-    monthlyPrice: 99,
-    yearlyPrice: 79,
+    monthlyPrice: 22,
+    yearlyPrice: 19,
     buttonText: "Start Now",
     popular: false,
     features: [
@@ -104,7 +107,8 @@ const plans = [
       "All Pro features",
       "Unlimited projects",
       "Priority crawl speed (maximum performance)",
-      "All future features included"
+      "All future features included",
+      "Email Support"
     ]
   }
 ];
@@ -223,7 +227,7 @@ export default function StaticPricing() {
               <div className="mt-8">
                 <button
                   onClick={triggerModal}
-                  className={`w-full group flex items-center justify-center gap-1.5 rounded-lg py-3 text-sm font-semibold transition-all cursor-pointer ${
+                  className={`w-full group flex items-center justify-center gap-1.5 rounded-xl py-3 text-sm font-semibold transition-all cursor-pointer ${
                     plan.popular
                       ? "bg-accent-blue text-white hover:bg-blue-600 shadow-[0_4px_20px_rgba(25,119,247,0.2)]"
                       : "bg-zinc-900 text-white hover:bg-zinc-800 border border-zinc-800"
@@ -327,7 +331,7 @@ export default function StaticPricing() {
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center gap-1 bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 text-white font-medium text-xs px-4 py-2.5 rounded-lg transition-colors"
+          className="inline-flex items-center justify-center gap-1 bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 text-white font-medium text-xs px-4 py-2.5 rounded-xl transition-colors"
         >
           Contact Support
           <ArrowRight className="h-3 w-3" />

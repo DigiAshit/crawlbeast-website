@@ -121,7 +121,7 @@ const PopupDialog: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full mt-2 bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-6 rounded-full text-sm transition-transform active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-primary/20 hover:shadow-primary/30"
+                    className="w-full mt-2 bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-6 rounded-xl text-sm transition-transform active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-primary/20 hover:shadow-primary/30"
                   >
                     {isLoading ? (
                       <span className="flex items-center gap-2">

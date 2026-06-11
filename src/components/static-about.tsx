@@ -27,13 +27,6 @@ const values = [
   }
 ];
 
-const team = [
-  { name: "Kamindu Jess", role: "Founder & CEO", initials: "KJ" },
-  { name: "Emma Collins", role: "Co-Founder & CEO", initials: "EC" },
-  { name: "Jason Reed", role: "Co-Founder & CTO", initials: "JR" },
-  { name: "Liam Bennett", role: "Chief Operating Officer", initials: "LB" }
-];
-
 const stats = [
   { value: "10,000+", label: "Active Crawlers" },
   { value: "50M+", label: "URLs Audited" },
@@ -116,25 +109,6 @@ export default function StaticAbout() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="relative max-w-5xl mx-auto mb-12">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-4">The People Behind the Platform</h2>
-        <p className="text-zinc-400 text-sm text-center max-w-xl mx-auto mb-16">
-          Our all-in-one platform simplifies your workflow so you can focus on what really matters &mdash; growing your business.
-        </p>
-
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {team.map((member) => (
-            <div key={member.name} className="glow-card p-6 rounded-xl text-center flex flex-col items-center">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-zinc-900 border border-zinc-800 text-sm font-bold text-accent-blue mb-4">
-                {member.initials}
-              </div>
-              <h3 className="text-sm font-bold text-white">{member.name}</h3>
-              <p className="text-[10px] text-zinc-500 mt-1 font-medium">{member.role}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Bottom CTA Block */}
       <section className="relative py-16 px-6 max-w-5xl mx-auto text-center border border-zinc-900 rounded-3xl bg-zinc-950/20 overflow-hidden mt-24">
@@ -148,7 +122,7 @@ export default function StaticAbout() {
         <div className="flex gap-4 justify-center">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-accent-blue hover:bg-blue-600 transition-colors font-medium text-xs text-white px-5 py-3 cursor-pointer shadow-[0_4px_20px_rgba(25,119,247,0.2)]"
+            className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-accent-blue hover:bg-blue-600 transition-colors font-medium text-xs text-white px-5 py-3 cursor-pointer shadow-[0_4px_20px_rgba(25,119,247,0.2)]"
           >
             Download CrawlBeast
             <ArrowRight className="h-3.5 w-3.5" />
