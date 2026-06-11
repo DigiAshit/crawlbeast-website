@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { X, ChevronRight } from "lucide-react";
+import { X, ChevronRight, User, Mail, ArrowRight, CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface DownloadModalProps {
@@ -14,6 +14,7 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,9 +55,16 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
       }
 
       setLoading(false);
-      onClose();
-      // Redirect to download page with parameters
-      window.location.href = `/download?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
+      setIsSubmitted(true);
+
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setName("");
+        setEmail("");
+        onClose();
+        // Redirect to download page with parameters
+        window.location.href = `/download?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
+      }, 1500);
     } catch (err: any) {
       setLoading(false);
       setError(err.message || "Failed to submit lead");
@@ -72,8 +80,10 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            onClick={() => {
+              if (!loading && !isSubmitted) onClose();
+            }}
+            className="fixed inset-0 bg-black/75 backdrop-blur-md"
           />
 
           {/* Modal Container */}
@@ -81,81 +91,117 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
             initial={{ opacity: 0, scale: 0.95, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
-            transition={{ type: "spring", stiffness: 350, damping: 28 }}
-            className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#000F5C] via-[#000420] to-[#000420] p-8 sm:p-10 text-center shadow-2xl"
+            transition={{ type: "spring", duration: 0.4 }}
+            className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#0e1629] to-[#06080d] p-8 shadow-2xl"
           >
+            {/* Glowing Accent Border */}
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-primary to-secondary" />
+
             {/* Close Button */}
-            <button
-              onClick={onClose}
-              className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-zinc-400 hover:text-white transition-colors hover:bg-white/5"
-              aria-label="Close dialog"
-            >
-              <X className="h-5 w-5" />
-            </button>
+            {!loading && !isSubmitted && (
+              <button
+                onClick={onClose}
+                className="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors p-1 hover:bg-white/5 rounded-full"
+                aria-label="Close dialog"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
 
-            {/* Inner Content Grid */}
-            <div className="flex flex-col items-center">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4.5 py-1.5 text-xs text-zinc-300 font-medium mb-6">
-                <div className="flex h-4 w-4 items-center justify-center rounded bg-white/10">
-                  <ChevronRight className="h-3.5 w-3.5 text-white" />
-                </div>
-                <span>Our Approach</span>
-              </div>
+            {!isSubmitted ? (
+              <div>
+                <h3 className="text-xl font-bold tracking-tight text-white mb-2">
+                  Download for Free
+                </h3>
+                <p className="text-xs text-zinc-400 mb-6 leading-relaxed">
+                  Run powerful SEO audits, uncover technical issues, and improve rankings faster. Enter details to access.
+                </p>
 
-              {/* Title */}
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-                Download for Free
-              </h2>
+                {/* Form */}
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="text-left">
+                    <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1.5 pl-0.5">
+                      Full Name
+                    </label>
+                    <div className="relative">
+                      <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 text-zinc-500">
+                        <User className="h-4 w-4" />
+                      </span>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Jane Doe"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        disabled={loading}
+                        className="w-full bg-[#06080d]/60 border border-zinc-850 focus:border-primary/50 rounded-xl py-3 pl-10 pr-4 text-sm text-white placeholder-zinc-650 outline-none transition-all focus:ring-1 focus:ring-primary/30 disabled:opacity-50"
+                      />
+                    </div>
+                  </div>
 
-              {/* Subtitle */}
-              <p className="text-sm text-zinc-300 max-w-xs sm:max-w-sm leading-relaxed mb-8">
-                Run powerful SEO audits, uncover technical issues, and improve rankings faster.
-              </p>
+                  <div className="text-left">
+                    <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1.5 pl-0.5">
+                      Email Address
+                    </label>
+                    <div className="relative">
+                      <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 text-zinc-500">
+                        <Mail className="h-4 w-4" />
+                      </span>
+                      <input
+                        type="email"
+                        required
+                        placeholder="jane@framer.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        disabled={loading}
+                        className="w-full bg-[#06080d]/60 border border-zinc-850 focus:border-primary/50 rounded-xl py-3 pl-10 pr-4 text-sm text-white placeholder-zinc-650 outline-none transition-all focus:ring-1 focus:ring-primary/30 disabled:opacity-50"
+                      />
+                    </div>
+                  </div>
 
-              {/* Form */}
-              <form onSubmit={handleSubmit} className="w-full max-w-sm flex flex-col gap-4">
-                <div className="flex flex-col gap-1">
-                  <input
-                    type="text"
-                    required
-                    placeholder="Jane Doe"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    disabled={loading}
-                    className="w-full rounded-xl bg-white/95 text-black placeholder-zinc-400 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-accent-blue font-medium disabled:opacity-50"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-1">
-                  <input
-                    type="email"
-                    required
-                    placeholder="jane@framer.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    disabled={loading}
-                    className="w-full rounded-xl bg-white/95 text-black placeholder-zinc-400 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-accent-blue font-medium disabled:opacity-50"
-                  />
-                </div>
-
-                {error && (
-                  <p className="text-xs text-red-500 text-left px-1">{error}</p>
-                )}
-                
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-primary-blue to-accent-blue py-3 font-bold text-sm text-white transition-all shadow-[0_4px_20px_rgba(10,57,240,0.3)] hover:opacity-95 active:scale-[0.98] disabled:opacity-50 cursor-pointer"
-                >
-                  {loading ? (
-                    <span className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
-                  ) : (
-                    "Start Your Free Audit"
+                  {error && (
+                    <p className="text-xs text-red-500 text-left px-1 mb-2 font-medium">{error}</p>
                   )}
-                </button>
-              </form>
-            </div>
+                  
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full mt-2 bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-6 rounded-xl text-sm transition-all hover:brightness-110 active:scale-98 disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-primary/20 hover:shadow-primary/30 duration-300"
+                  >
+                    {loading ? (
+                      <span className="flex items-center gap-2">
+                        <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                        Generating License...
+                      </span>
+                    ) : (
+                      <>
+                        Start Your Free Audit
+                        <ArrowRight className="h-4 w-4" />
+                      </>
+                    )}
+                  </button>
+                </form>
+              </div>
+            ) : (
+              <div className="text-center py-6">
+                <motion.div
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  className="mx-auto h-12 w-12 text-success flex items-center justify-center mb-4 bg-success/10 rounded-full border border-success/20"
+                >
+                  <CheckCircle className="h-7 w-7 text-green-500" />
+                </motion.div>
+                <h3 className="text-lg font-bold text-white mb-2">
+                  Audit Key Sent!
+                </h3>
+                <p className="text-xs text-zinc-400 leading-relaxed px-2">
+                  Thank you, <strong className="text-zinc-200">{name}</strong>. We've sent your setup download link and license key to <strong className="text-zinc-200">{email}</strong>.
+                </p>
+                <p className="text-[10px] text-zinc-500 mt-6 animate-pulse">
+                  Starting download shortly...
+                </p>
+              </div>
+            )}
           </motion.div>
         </div>
       )}

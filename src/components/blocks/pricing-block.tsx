@@ -119,11 +119,7 @@ export default function PricingBlock({
               <div className="mt-8">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className={`w-full group flex items-center justify-center gap-1.5 rounded-2xl py-3 text-sm font-semibold transition-all cursor-pointer ${
-                    plan.popular
-                      ? "bg-[#0A39F0] text-white hover:bg-[#002bd6] shadow-[0_4px_20px_rgba(10,57,240,0.3)]"
-                      : "bg-white/5 text-white hover:bg-white/10 border border-white/10"
-                  }`}
+                  className="w-full group flex items-center justify-center gap-1.5 rounded-xl py-3 text-sm font-semibold transition-all cursor-pointer bg-[#0A39F0] text-white hover:bg-[#002bd6] shadow-[0_4px_20px_rgba(10,57,240,0.3)]"
                 >
                   {plan.buttonText || "Start Now"}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

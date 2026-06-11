@@ -57,6 +57,9 @@ export async function getPageMetadata(seo: SeoSettings | undefined, defaultTitle
   const metadata: Metadata = {
     title,
     description,
+    icons: {
+      icon: '/crawlBeast.png',
+    },
     alternates: canonical ? { canonical } : undefined,
     robots: {
       index: seo?.robotsIndex !== false,

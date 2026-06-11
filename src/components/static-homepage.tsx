@@ -8,6 +8,14 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const easeWeb: [number, number, number, number] = [0.16, 1, 0.3, 1];
+const fadeInUp = {
+  initial: { opacity: 0, y: 35 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-120px" },
+  transition: { duration: 0.8, ease: easeWeb }
+};
+
 const StaticHomepage: React.FC = () => {
   const { openPopup } = usePopup();
 
@@ -153,7 +161,7 @@ const StaticHomepage: React.FC = () => {
   return (
     <div className="flex-1">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-grid-pattern">
+      <motion.section {...fadeInUp} className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-grid-pattern">
         <div className="max-w-7xl mx-auto px-6 text-center flex flex-col items-center">
           {/* Badge */}
           <div className="inline-flex flex-wrap items-center justify-center gap-3 mb-6">
@@ -207,10 +215,10 @@ const StaticHomepage: React.FC = () => {
             <CrawlSimulation />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Our Approach Section */}
-      <section className="py-24 border-t border-white/5 bg-[#080b11]/50" id="about">
+      <motion.section {...fadeInUp} className="py-24 border-t border-white/5 bg-[#080b11]/50" id="about">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="inline-flex px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 border border-primary/20 text-secondary mb-3 uppercase tracking-wider">
@@ -220,7 +228,7 @@ const StaticHomepage: React.FC = () => {
               Simple Steps to Get Started
             </h2>
             <p className="text-zinc-400 text-base leading-relaxed">
-              Your all-in-one SEO audit workflow — built for speed, clarity, and real results.
+              Your all-in-one SEO audit workflow, built for speed, clarity, and real results.
             </p>
           </div>
 
@@ -249,10 +257,10 @@ const StaticHomepage: React.FC = () => {
             </button>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Bento Grid Features Section */}
-      <section className="py-24 border-t border-white/5" id="features">
+      <motion.section {...fadeInUp} className="py-24 border-t border-white/5" id="features">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="inline-flex px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 border border-primary/20 text-secondary mb-3 uppercase tracking-wider">
@@ -379,10 +387,10 @@ const StaticHomepage: React.FC = () => {
             </button>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Clients Success (The CrawlBeast Effect) */}
-      <section className="py-24 border-t border-white/5 bg-[#080b11]/50" id="success">
+      <motion.section {...fadeInUp} className="py-24 border-t border-white/5 bg-[#080b11]/50" id="success">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="inline-flex px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 border border-primary/20 text-secondary mb-3 uppercase tracking-wider">
@@ -529,10 +537,10 @@ const StaticHomepage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Benefits Section & AI Ticker marquee */}
-      <section className="py-24 border-t border-white/5">
+      <motion.section {...fadeInUp} className="py-24 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="inline-flex px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 border border-primary/20 text-secondary mb-3 uppercase tracking-wider">
@@ -613,10 +621,10 @@ const StaticHomepage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials Section */}
-      <section className="py-24 border-t border-white/5 bg-[#080b11]/50" id="testimonials">
+      <motion.section {...fadeInUp} className="py-24 border-t border-white/5 bg-[#080b11]/50" id="testimonials">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="inline-flex px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 border border-primary/20 text-secondary mb-3 uppercase tracking-wider">
@@ -626,7 +634,7 @@ const StaticHomepage: React.FC = () => {
               Trusted by 1,200+ SEO Professionals
             </h2>
             <p className="text-zinc-400 text-base leading-relaxed">
-              From freelance consultants to enterprise teams — what they say about CrawlBeast.
+              From freelance consultants to enterprise teams: what they say about CrawlBeast.
             </p>
           </div>
 
@@ -650,10 +658,10 @@ const StaticHomepage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Embedded Pricing Section */}
-      <section className="py-24 border-t border-white/5" id="pricing-homepage">
+      <motion.section {...fadeInUp} className="py-24 border-t border-white/5" id="pricing-homepage">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="inline-flex px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 border border-primary/20 text-secondary mb-3 uppercase tracking-wider">
@@ -762,10 +770,10 @@ const StaticHomepage: React.FC = () => {
             })}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* FAQ Accordions */}
-      <section className="py-24 border-t border-white/5 bg-[#080b11]/50">
+      <motion.section {...fadeInUp} className="py-24 border-t border-white/5 bg-[#080b11]/50">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-flex px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 border border-primary/20 text-secondary mb-3 uppercase tracking-wider">
@@ -812,10 +820,10 @@ const StaticHomepage: React.FC = () => {
             })}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Final Welcome Banner */}
-      <section className="py-24 border-t border-white/5 bg-gradient-to-b from-transparent to-[#05070a]">
+      <motion.section {...fadeInUp} className="py-24 border-t border-white/5 bg-gradient-to-b from-transparent to-[#05070a]">
         <div className="max-w-5xl mx-auto px-6">
           <div className="bg-gradient-to-br from-primary/10 via-[#0e1320] to-[#0e1320] border border-white/5 rounded-2xl p-12 md:p-16 text-center flex flex-col items-center relative overflow-hidden shadow-2xl">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 radial-glow pointer-events-none" />
@@ -841,7 +849,7 @@ const StaticHomepage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

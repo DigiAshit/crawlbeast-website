@@ -36,7 +36,6 @@ const Footer: React.FC = () => {
                 support@crawlbeast.com
               </a>
             </span>
-            <span>Office Location: <strong className="text-zinc-300 font-medium">Delhi, India</strong></span>
           </div>
         </div>
 

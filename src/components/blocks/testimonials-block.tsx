@@ -36,7 +36,7 @@ export default function TestimonialsBlock({
         <span className="text-xs uppercase font-semibold tracking-wider text-[#0A39F0] font-mono">Testimonials</span>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-3 mb-4 font-display">{title}</h2>
         <p className="text-zinc-400 text-sm">
-          From freelance consultants to enterprise teams — what they say about CrawlBeast.
+          From freelance consultants to enterprise teams: what they say about CrawlBeast.
         </p>
       </div>
 

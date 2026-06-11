@@ -93,7 +93,7 @@ const CrawlSimulation: React.FC = () => {
           <span className="w-3 h-3 rounded-full bg-success block" />
         </div>
         <span className="font-mono text-xs text-zinc-500 font-medium tracking-wide">
-          CrawlBeast App — v1.4.2
+          CrawlBeast App v1.4.2
         </span>
         <span
           className={`font-mono text-xs px-3 py-1 rounded-full border transition-all ${

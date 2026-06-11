@@ -21,6 +21,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "CrawlBeast | Turn SEO Insights Into Revenue",
   description: "Run powerful desktop SEO audits locally. Analyze sitemaps, uncover rendering errors, index broken links, and audit images with speed.",
+  icons: {
+    icon: "/crawlBeast.png",
+  },
 };
 
 export default function RootLayout({

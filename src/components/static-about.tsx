@@ -3,6 +3,15 @@
 import { useState } from "react";
 import { Shield, Sparkles, Heart, Eye, ArrowRight } from "lucide-react";
 import DownloadModal from "@/components/ui/download-modal";
+import { motion } from "framer-motion";
+
+const easeWeb: [number, number, number, number] = [0.16, 1, 0.3, 1];
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-120px" },
+  transition: { duration: 0.8, ease: easeWeb }
+};
 
 const values = [
   {
@@ -23,7 +32,7 @@ const values = [
   {
     icon: Eye,
     title: "Your Time is Valuable",
-    desc: "That's why we automate the repetitive stuff, streamline the complex, and give you real-time insights that drive real results — no fluff, no bloat."
+    desc: "That's why we automate the repetitive stuff, streamline the complex, and give you real-time insights that drive real results, no fluff, no bloat."
   }
 ];
 
@@ -38,7 +47,7 @@ export default function StaticAbout() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen bg-black overflow-hidden bg-grid-noise py-20 px-6">
+    <div className="relative min-h-screen bg-gradient-to-b from-[#07090E] via-[#0b142c] to-[#07090E] overflow-hidden bg-grid-noise py-20 px-6">
       {/* Background glow highlights */}
       <div className="absolute inset-0 pointer-events-none bg-radial-gradient" />
       <div className="absolute inset-0 pointer-events-none bg-bottom-radial-gradient" />
@@ -52,12 +61,12 @@ export default function StaticAbout() {
           Built to Solve the Real Problem
         </h1>
         <p className="text-zinc-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-          Simplifying your workflow, one feature at a time. Our platform simplifies the way people manage tasks, collaborate, and scale their operations &mdash; all in one place.
+          Simplifying your workflow, one feature at a time. Our platform simplifies the way people manage tasks, collaborate, and scale their operations, all in one place.
         </p>
       </div>
 
       {/* Core Philosophy Section */}
-      <section className="relative max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+      <motion.section {...fadeInUp} className="relative max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
         <div>
           <span className="text-xs uppercase font-semibold tracking-wider text-zinc-500">Our Story</span>
           <h2 className="text-2xl sm:text-3xl font-bold text-white mt-2 mb-6">How a Simple Idea Became a Platform</h2>
@@ -76,20 +85,20 @@ export default function StaticAbout() {
             Whether you&apos;re a growing startup or a global enterprise, we provide the tools you need to streamline your workflow, automate what slows you down, and focus on what drives results. From real-time desktop auditing and intelligent diagnostics to seamless integrations, we&apos;re here to make your day-to-day operations smoother.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Stats Block */}
-      <section className="relative max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24 border-y border-zinc-900 py-12 bg-zinc-950/10 backdrop-blur-sm rounded-xl px-6">
+      <motion.section {...fadeInUp} className="relative max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24 border-y border-zinc-900 py-12 bg-zinc-950/10 backdrop-blur-sm rounded-xl px-6">
         {stats.map((stat) => (
           <div key={stat.label} className="text-center">
             <div className="text-3xl sm:text-4xl font-extrabold text-white">{stat.value}</div>
             <div className="text-xs text-zinc-500 mt-2 font-medium">{stat.label}</div>
           </div>
         ))}
-      </section>
+      </motion.section>
 
       {/* Value Cards Bento Grid */}
-      <section className="relative max-w-5xl mx-auto mb-24">
+      <motion.section {...fadeInUp} className="relative max-w-5xl mx-auto mb-24">
         <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-12">Our Core Values</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {values.map((val) => {
@@ -107,11 +116,11 @@ export default function StaticAbout() {
             );
           })}
         </div>
-      </section>
+      </motion.section>
 
 
       {/* Bottom CTA Block */}
-      <section className="relative py-16 px-6 max-w-5xl mx-auto text-center border border-zinc-900 rounded-3xl bg-zinc-950/20 overflow-hidden mt-24">
+      <motion.section {...fadeInUp} className="relative py-16 px-6 max-w-5xl mx-auto text-center border border-zinc-900 rounded-3xl bg-zinc-950/20 overflow-hidden mt-24">
         <div className="absolute inset-0 bg-radial-gradient opacity-40 pointer-events-none" />
         <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-tight">
           Ready to experience the local desktop crawl?
@@ -128,7 +137,7 @@ export default function StaticAbout() {
             <ArrowRight className="h-3.5 w-3.5" />
           </button>
         </div>
-      </section>
+      </motion.section>
 
       <DownloadModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>

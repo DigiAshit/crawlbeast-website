@@ -7,6 +7,14 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const easeWeb: [number, number, number, number] = [0.16, 1, 0.3, 1];
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-120px" },
+  transition: { duration: 0.8, ease: easeWeb }
+};
+
 const changelog = [
   {
     version: "v1.4.2",
@@ -66,7 +74,7 @@ export default function StaticDownload() {
   };
 
   return (
-    <div className="relative min-h-screen bg-black overflow-hidden bg-grid-noise py-20 px-6">
+    <div className="relative min-h-screen bg-gradient-to-b from-[#07090E] via-[#0b142c] to-[#07090E] overflow-hidden bg-grid-noise py-20 px-6">
       {/* Glow backgrounds */}
       <div className="absolute inset-0 pointer-events-none bg-radial-gradient" />
       <div className="absolute inset-0 pointer-events-none bg-bottom-radial-gradient" />
@@ -183,7 +191,7 @@ export default function StaticDownload() {
       </div>
 
       {/* Installation guides */}
-      <section className="relative max-w-4xl mx-auto border-t border-zinc-900 pt-16 mb-24">
+      <motion.section {...fadeInUp} className="relative max-w-4xl mx-auto border-t border-zinc-900 pt-16 mb-24">
         <h2 className="text-xl font-bold text-white text-center mb-12">How to Install</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -222,10 +230,10 @@ export default function StaticDownload() {
             </ol>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Changelog Accordions */}
-      <section className="relative max-w-3xl mx-auto border-t border-zinc-900 pt-16">
+      <motion.section {...fadeInUp} className="relative max-w-3xl mx-auto border-t border-zinc-900 pt-16">
         <h2 className="text-xl font-bold text-white text-center mb-10 flex items-center justify-center gap-2">
           <History className="h-5 w-5 text-accent-blue" />
           Release Log & Changelog
@@ -273,7 +281,7 @@ export default function StaticDownload() {
             );
           })}
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

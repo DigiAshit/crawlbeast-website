@@ -4,6 +4,14 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Send, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const easeWeb: [number, number, number, number] = [0.16, 1, 0.3, 1];
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-120px" },
+  transition: { duration: 0.8, ease: easeWeb }
+};
+
 export default function StaticContact() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -35,13 +43,13 @@ export default function StaticContact() {
   };
 
   return (
-    <div className="relative min-h-screen bg-black overflow-hidden bg-grid-noise py-20 px-6">
+    <div className="relative min-h-screen bg-gradient-to-b from-[#07090E] via-[#0b142c] to-[#07090E] overflow-hidden bg-grid-noise py-20 px-6">
       {/* Background glow highlights */}
       <div className="absolute inset-0 pointer-events-none bg-radial-gradient" />
       <div className="absolute inset-0 pointer-events-none bg-bottom-radial-gradient" />
 
       {/* Hero Header */}
-      <div className="relative max-w-4xl mx-auto text-center mt-12 mb-20">
+      <motion.div {...fadeInUp} className="relative max-w-4xl mx-auto text-center mt-12 mb-20">
         <span className="text-xs uppercase font-semibold tracking-wider text-accent-blue bg-blue-950/40 border border-blue-900/40 px-3 py-1 rounded-full">
           Contact
         </span>
@@ -49,11 +57,11 @@ export default function StaticContact() {
           We’d Love to Hear From You
         </h1>
         <p className="text-zinc-400 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
-          Whether you have a question, feedback, partnership inquiry, or just want to say hello &mdash; we&apos;re here and ready to help.
+          Whether you have a question, feedback, partnership inquiry, or just want to say hello, we&apos;re here and ready to help.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="relative max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <motion.div {...fadeInUp} className="relative max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* Info Grid Sidebar */}
         <div className="lg:col-span-5 flex flex-col gap-6">
           <div className="glow-card p-6 rounded-xl flex gap-4 items-start">
@@ -63,21 +71,8 @@ export default function StaticContact() {
             <div>
               <h3 className="text-sm font-bold text-white mb-1">Email Us</h3>
               <p className="text-xs text-zinc-400 mb-2">For general support and inquiries.</p>
-              <a href="mailto:support@onixtheme.com" className="text-xs text-accent-blue font-medium hover:underline">
-                support@onixtheme.com
-              </a>
-            </div>
-          </div>
-
-          <div className="glow-card p-6 rounded-xl flex gap-4 items-start">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-950 border border-blue-900/40">
-              <Phone className="h-5 w-5 text-accent-blue" />
-            </div>
-            <div>
-              <h3 className="text-sm font-bold text-white mb-1">Call Us</h3>
-              <p className="text-xs text-zinc-400 mb-2">Available Mon-Fri, 9am - 5pm PST.</p>
-              <a href="tel:+12345678901" className="text-xs text-zinc-300 font-medium hover:text-white transition-colors">
-                +1 (234) 567-8901
+              <a href="mailto:support@crawlbeast.com" className="text-xs text-accent-blue font-medium hover:underline">
+                support@crawlbeast.com
               </a>
             </div>
           </div>
@@ -89,7 +84,7 @@ export default function StaticContact() {
             <div>
               <h3 className="text-sm font-bold text-white mb-1">Office Location</h3>
               <p className="text-xs text-zinc-400">
-                44 Market Street, San Francisco
+                Delhi, India
               </p>
             </div>
           </div>
@@ -227,7 +222,7 @@ export default function StaticContact() {
             </AnimatePresence>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

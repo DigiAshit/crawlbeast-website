@@ -119,8 +119,8 @@ const comparisonMatrix = [
   { feature: "SEO Diagnostic Checks", free: "Core Checks", pro: "All Checks", advanced: "All Checks" },
   { feature: "Crawl Speed", free: "Standard", pro: "Fast", proHighlight: true, advanced: "Priority (Maximum)" },
   { feature: "Support SLA", free: "Community Forum", pro: "Email (24h)", advanced: "Priority Support (4h)" },
-  { feature: "Export Formats", free: "CSV", pro: "CSV, PDF", advanced: "CSV, PDF, JSON" },
-  { feature: "Future Updates", free: "Minor only", pro: "Included", advanced: "Included" }
+  { feature: "Export Formats", free: "CSV, PDF", pro: "CSV, PDF", advanced: "CSV, PDF, JSON" },
+  { feature: "Future Updates", free: "Included", pro: "Included", advanced: "Included" }
 ];
 
 export default function StaticPricing() {
@@ -134,14 +134,14 @@ export default function StaticPricing() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#000210] overflow-hidden bg-grid-noise py-20 px-6">
+    <div className="relative min-h-screen bg-gradient-to-b from-[#07090E] via-[#0b142c] to-[#07090E] overflow-hidden bg-grid-noise py-20 px-6">
       {/* Glow backgrounds */}
       <div className="absolute inset-0 pointer-events-none bg-radial-gradient" />
       <div className="absolute inset-0 pointer-events-none bg-bottom-radial-gradient" />
       <div className="bg-column-lines" />
 
       {/* Intro Header */}
-      <div className="relative max-w-4xl mx-auto text-center mt-12 mb-16">
+      <motion.div {...fadeInUp} className="relative max-w-4xl mx-auto text-center mt-12 mb-16">
         <span className="text-xs uppercase font-semibold tracking-wider text-accent-blue bg-blue-950/40 border border-blue-900/40 px-3 py-1 rounded-full">
           Pricing Plans
         </span>
@@ -174,7 +174,7 @@ export default function StaticPricing() {
             </span>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Pricing Cards Grid */}
       <motion.div
@@ -227,11 +227,7 @@ export default function StaticPricing() {
               <div className="mt-8">
                 <button
                   onClick={triggerModal}
-                  className={`w-full group flex items-center justify-center gap-1.5 rounded-xl py-3 text-sm font-semibold transition-all cursor-pointer ${
-                    plan.popular
-                      ? "bg-accent-blue text-white hover:bg-blue-600 shadow-[0_4px_20px_rgba(25,119,247,0.2)]"
-                      : "bg-zinc-900 text-white hover:bg-zinc-800 border border-zinc-800"
-                  }`}
+                  className="w-full group flex items-center justify-center gap-1.5 rounded-xl py-3 text-sm font-semibold transition-all cursor-pointer bg-primary text-white hover:bg-blue-600 shadow-[0_4px_20px_rgba(6,118,254,0.15)]"
                 >
                   {plan.buttonText}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
