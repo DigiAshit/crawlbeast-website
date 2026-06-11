@@ -4,7 +4,7 @@ import { PopupProvider } from "@/components/PopupContext";
 import PopupDialog from "@/components/PopupDialog";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import "./globals.css";
+import "../globals.css";
 
 const poppins = Poppins({
   variable: "--font-poppins",
