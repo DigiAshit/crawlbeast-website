@@ -21,7 +21,7 @@ const StaticHomepage: React.FC = () => {
 
   // State controls
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [isYearly, setIsYearly] = useState(false);
+  const [isYearly, setIsYearly] = useState(true);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -30,29 +30,29 @@ const StaticHomepage: React.FC = () => {
   const steps = [
     {
       num: "Step 01",
-      title: "Add Projects & Sitemaps",
-      desc: "Create projects in seconds. Add your website or sitemap and organize audits by client or campaign."
+      title: "Input & Organization",
+      desc: "Create projects in seconds. Add your sitemap or target domain and organize audits by client or campaign to track your search footprint."
     },
     {
       num: "Step 02",
-      title: "Run Deep SEO Audits",
-      desc: "Crawl up to 10,000 URLs per project. Identify technical SEO issues, broken links, missing tags, and performance gaps instantly."
+      title: "Proactive Site Crawling",
+      desc: "Scan up to 100,000 URLs locally. CrawlBeast finds broken redirects, redirect loops, missing metadata, and rendering blockers instantly."
     },
     {
       num: "Step 03",
-      title: "Analyze, Fix & Improve",
-      desc: "Get structured audit reports with scores, issue breakdowns, and (soon) AI-powered recommendations to fix problems faster."
+      title: "Actionable Resolution",
+      desc: "Get structured, prioritized audit reports. Fix high-impact technical issues first, handover clear roadmaps to developers, and verify ranking improvements."
     }
   ];
 
   const faqs = [
     {
-      q: "Can I use the license on multiple devices?",
-      a: "Yes, depending on your plan. The Pro plan allows activation on up to 2 personal devices, and the Advanced plan allows up to 5 devices across your team."
+      q: "Is the Free Version really free forever, or is it a trial?",
+      a: "The Free Version is 100% free forever. We do not require a credit card to sign up, and we do not automatically upgrade you. You can manage 5 projects and crawl up to 1,000 URLs completely free of charge."
     },
     {
-      q: "What is included in the Free plan?",
-      a: "The Free plan includes up to 5 active projects, basic crawl capabilities for up to 1,000 URLs per project, and core technical SEO checks including meta tags, broken link detection, and image analysis."
+      q: "What is included in the Free Version?",
+      a: "The Free Version includes up to 5 active projects, crawl capabilities for up to 1,000 URLs per project, and core technical SEO checks including meta tags, broken link detection, and image alt attributes."
     },
     {
       q: "What happens when I reach my URL limit?",
@@ -109,17 +109,17 @@ const StaticHomepage: React.FC = () => {
 
   const plans = [
     {
-      name: "Free Plan",
-      desc: "Perfect for beginners and small audits.",
+      name: "Free Version",
+      desc: "Perfect for beginners and small audits. Free forever.",
       priceMonthly: 0,
       priceYearly: 0,
       features: [
         "Crawl up to 1,000 URLs",
         "Up to 5 active projects",
         "Core SEO checks (meta, links, images)",
+        "Desktop sqlite database storage",
         "Community support forums",
-        "All future features included",
-        "Email Support"
+        "No credit card required"
       ],
       cta: "Download Now",
       featured: false
@@ -188,31 +188,212 @@ const StaticHomepage: React.FC = () => {
             </span>
           </h1>
 
-          <p className="text-zinc-400 text-base md:text-xl max-w-2xl leading-relaxed mb-8">
-            Run powerful SEO audits directly from your desktop. Analyze websites, uncover critical issues, and turn data into actionable insights faster than ever.
+          <p className="text-zinc-400 text-base md:text-xl max-w-3xl leading-relaxed mb-8">
+            Desktop Site Audit Crawler built to uncover technical SEO issues, prioritise fixes, and improve visibility on Google and AI search engines.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-3 w-full sm:w-auto">
             <button
               onClick={openPopup}
-              className="w-full sm:w-auto bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3.5 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/20 hover:brightness-110 transition-all active:scale-95"
+              className="w-full sm:w-auto text-center bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3.5 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/20 hover:brightness-110 transition-all active:scale-95 border-0 outline-none"
             >
-              Start Your Free Audit
-            </button>
-            <button
-              onClick={openPopup}
-              className="w-full sm:w-auto bg-white/5 border border-white/10 hover:border-zinc-700 text-white font-semibold py-3.5 px-8 rounded-xl text-sm cursor-pointer transition-colors"
-            >
-              Watch Demo
+              Get the Free Version - Download Now
             </button>
           </div>
-          <p className="text-[11px] text-zinc-600 font-medium uppercase tracking-wider">
-            Download CrawlBeast and crawl up to 1,000 URLs for free.
-          </p>
+          <div className="inline-flex items-center justify-center px-4 py-2.5 rounded-full bg-white/[0.02] border border-white/10 text-xs md:text-sm text-zinc-300 font-medium max-w-2xl leading-relaxed shadow-lg backdrop-blur-sm">
+            <span className="h-2 w-2 rounded-full bg-secondary animate-pulse mr-2.5 flex-shrink-0" />
+Get started free forever. Crawl 1,000 URLs & manage 5 projects with no credit card required.          </div>
 
           {/* Interactive Widget Overlay */}
           <div className="w-full mt-16 md:mt-24">
             <CrawlSimulation />
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Agitation / Pain Section (Spreadsheets copy from draft with reading animation) */}
+      <motion.section {...fadeInUp} className="py-20 border-t border-white/5 bg-[#05070a]/30">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          {(() => {
+            const agitationTitle1 = "Are you spending hours on clunky spreadsheets every week?".split(" ");
+            const agitationTitle2 = "Getting unsatisfying results for your business or clients?".split(" ");
+            
+            const agitationBody1 = "Let’s be honest: Clients don't pay for crawl reports. They pay for solutions.".split(" ");
+            const agitationBody2 = "Most SEO crawlers dump thousands of rows of data into spreadsheets, leaving you to spend hours manually turning findings into recommendations.".split(" ");
+            const agitationBody3 = "CrawlBeast changes that. It is the desktop seo crawler software that tells you what to fix first.".split(" ");
+
+            const readingContainer = {
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.02
+                }
+              }
+            };
+
+            const readingWord = {
+              hidden: { opacity: 0.15 },
+              visible: { 
+                opacity: 1, 
+                transition: { duration: 0.2, ease: "easeOut" as const } 
+              }
+            };
+
+            return (
+              <>
+                <motion.h2 
+                  variants={readingContainer}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-80px" }}
+                  className="text-2xl md:text-3xl font-extrabold text-white mb-6 leading-snug"
+                >
+                  {agitationTitle1.map((w, idx) => (
+                    <motion.span key={idx} variants={readingWord} className="inline-block mr-1.5">{w}</motion.span>
+                  ))}
+                  <br />
+                  {agitationTitle2.map((w, idx) => (
+                    <motion.span key={idx} variants={readingWord} className="inline-block mr-1.5 text-secondary">{w}</motion.span>
+                  ))}
+                </motion.h2>
+                
+                <div className="bg-[#0e1320] border border-white/5 p-8 rounded-2xl text-left max-w-3xl mx-auto shadow-xl">
+                  <p className="text-zinc-400 text-xs font-mono uppercase tracking-widest mb-4">Let’s be honest</p>
+                  
+                  <motion.h3 
+                    variants={readingContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-80px" }}
+                    className="text-xl font-bold text-white mb-4"
+                  >
+                    {agitationBody1.map((w, idx) => (
+                      <motion.span key={idx} variants={readingWord} className="inline-block mr-1.5 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{w}</motion.span>
+                    ))}
+                  </motion.h3>
+                  
+                  <motion.p 
+                    variants={readingContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-80px" }}
+                    className="text-zinc-300 text-sm md:text-base leading-relaxed mb-6"
+                  >
+                    {agitationBody2.map((w, idx) => (
+                      <motion.span key={idx} variants={readingWord} className="inline-block mr-1">{w}</motion.span>
+                    ))}
+                  </motion.p>
+                  
+                  <motion.p 
+                    variants={readingContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-80px" }}
+                    className="text-zinc-300 text-sm md:text-base leading-relaxed font-semibold border-l-2 border-primary pl-4 py-1"
+                  >
+                    {agitationBody3.map((w, idx) => (
+                      <motion.span key={idx} variants={readingWord} className="inline-block mr-1">{w}</motion.span>
+                    ))}
+                  </motion.p>
+                </div>
+              </>
+            );
+          })()}
+        </div>
+      </motion.section>
+
+      {/* Why SEO Professionals Are Switching To CrawlBeast (Updated layout with graphic comparison) */}
+      <motion.section {...fadeInUp} className="py-24 border-t border-white/5 bg-[#080b11]/30">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Column: Copy & Audience Breakdown */}
+            <div className="lg:col-span-7 flex flex-col justify-center">
+              <span className="inline-flex self-start px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 border border-primary/20 text-secondary mb-3 uppercase tracking-wider">
+                Why SEO Professionals Switch
+              </span>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-8">
+                The SEO Crawler That Tells You What to Fix First
+              </h2>
+              
+              <div className="space-y-6">
+                <div className="bg-[#0e1320] border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:border-primary/20 transition-all duration-300">
+                  <div className="absolute top-0 left-0 bottom-0 w-[3px] bg-primary" />
+                  <h4 className="font-bold text-white text-lg mb-1.5">Agencies</h4>
+                  <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
+                    Scale onboarding. Audit portfolios in minutes without burning SaaS monthly credits. Manage multiple client domains under a unified, local SQLite database for blazing-fast reporting.
+                  </p>
+                </div>
+                <div className="bg-[#0e1320] border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:border-primary/20 transition-all duration-300">
+                  <div className="absolute top-0 left-0 bottom-0 w-[3px] bg-secondary" />
+                  <h4 className="font-bold text-white text-lg mb-1.5">Freelancers</h4>
+                  <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
+                    Win retainers with professional, prioritized audits that prove immediate value. Walk clients through exactly what needs to be fixed without spending hours formatting spreadsheet diagnostics.
+                  </p>
+                </div>
+                <div className="bg-[#0e1320] border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:border-primary/20 transition-all duration-300">
+                  <div className="absolute top-0 left-0 bottom-0 w-[3px] bg-accent" />
+                  <h4 className="font-bold text-white text-lg mb-1.5">Business Owners</h4>
+                  <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
+                    Stop guessing. Find crawl blocks and verify your site's search health in under 5 minutes. Discover exactly how search engines see your pages without paying high monthly SaaS subscription fees.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right Column: Comparison mock-up (features.png) */}
+            <div className="lg:col-span-5 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl blur-3xl pointer-events-none" />
+              <div className="relative border border-white/5 rounded-2xl overflow-hidden bg-[#07090e]/50 shadow-2xl">
+                <img 
+                  src="/features.png" 
+                  alt="CrawlBeast vs Other Crawlers Feature Comparison Matrix" 
+                  className="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Proof / Google Search Console & PageSpeed Performance Section */}
+      <motion.section {...fadeInUp} className="py-24 border-t border-white/5 bg-[#05070a]/40">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="inline-flex px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 border border-primary/20 text-secondary mb-3 uppercase tracking-wider">
+              Real-world Proof
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
+              Built for Speed. Verified by Output.
+            </h2>
+            <p className="text-zinc-400 text-base leading-relaxed">
+              See the direct impact of resolving site crawl errors. Boost indexation speed and rank higher on Google Search.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Left Card: Search Console Clicks Proof (Tight Crop) */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl blur-2xl pointer-events-none" />
+              <div className="relative border border-white/10 rounded-2xl overflow-hidden bg-white shadow-xl p-0 flex items-center justify-center">
+                <img 
+                  src="/gsc_clicks_small_tight.png" 
+                  alt="Google Search Console Click Growth Proof" 
+                  className="w-full h-auto object-cover rounded-xl"
+                />
+              </div>
+            </div>
+
+            {/* Right Card: Search Console Impressions Proof (Tight Crop) */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl blur-2xl pointer-events-none" />
+              <div className="relative border border-white/10 rounded-2xl overflow-hidden bg-white shadow-xl p-0 flex items-center justify-center">
+                <img 
+                  src="/gsc_impressions_small_tight.png" 
+                  alt="Google Search Console Impressions Performance Proof" 
+                  className="w-full h-auto object-cover rounded-xl"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </motion.section>
@@ -249,17 +430,17 @@ const StaticHomepage: React.FC = () => {
           </div>
 
           <div className="text-center mt-12">
-            <button
-              onClick={openPopup}
-              className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/15 transition-transform active:scale-95"
+            <a
+              href="/download"
+              className="inline-block bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/15 transition-transform active:scale-95"
             >
               Download Now
-            </button>
+            </a>
           </div>
         </div>
       </motion.section>
 
-      {/* Bento Grid Features Section */}
+      {/* Bento Grid Features Section (Enhanced with dashboard_enhanced.png and onpageissues_enhanced.png) */}
       <motion.section {...fadeInUp} className="py-24 border-t border-white/5" id="features">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -276,31 +457,40 @@ const StaticHomepage: React.FC = () => {
 
           {/* Bento Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Box 1: Structured Audit Reports */}
-            <div className="md:col-span-2 bg-[#0e1320] border border-white/5 hover:border-primary/20 p-8 rounded-2xl flex flex-col justify-between transition-all duration-300">
-              <div>
-                <div className="h-10 w-10 bg-primary/10 border border-primary/20 text-secondary rounded-lg flex items-center justify-center mb-6">
-                  <Zap className="h-5 w-5" />
+            {/* Box 1: Structured Audit Reports (Enhanced layout with structured.png) */}
+            <div className="md:col-span-2 bg-[#0e1320] border border-white/5 hover:border-primary/20 p-8 rounded-2xl flex flex-col md:flex-row gap-8 justify-between transition-all duration-300 overflow-hidden">
+              <div className="flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="h-10 w-10 bg-primary/10 border border-primary/20 text-secondary rounded-lg flex items-center justify-center mb-6">
+                    <Zap className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">Structured Audit Reports</h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                    Get clear, structured insights to streamline your auditing workflows. Drill down into individual resource segments immediately:
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Structured Audit Reports</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed max-w-xl mb-6">
-                  Get clear, structured insights to streamline your auditing workflows. Drill down into individual resource segments immediately:
-                </p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-semibold text-zinc-300">
+                  <li className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-success block" /> Total URLs crawled
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-success block" /> Success vs failed pages
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-success block" /> SEO health scores
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-success block" /> Issue breakdowns
+                  </li>
+                </ul>
               </div>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-semibold text-zinc-300">
-                <li className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-success block" /> Total URLs crawled
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-success block" /> Success vs failed pages
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-success block" /> SEO health scores
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-success block" /> Issue breakdowns
-                </li>
-              </ul>
+              <div className="flex-1 relative min-h-[220px] rounded-lg overflow-hidden border border-white/10 bg-white/[0.03] p-1">
+                <img
+                  src="/structured.png"
+                  alt="CrawlBeast Dashboard Mockup"
+                  className="w-full h-full object-cover object-top hover:scale-[1.03] transition-transform duration-500"
+                />
+              </div>
             </div>
 
             {/* Box 2: Desktop Performance */}
@@ -324,29 +514,38 @@ const StaticHomepage: React.FC = () => {
               </div>
             </div>
 
-            {/* Box 3: Powerful Website Crawling */}
-            <div className="bg-[#0e1320] border border-white/5 hover:border-primary/20 p-8 rounded-2xl flex flex-col justify-between transition-all duration-300">
-              <div>
-                <div className="h-10 w-10 bg-primary/10 border border-primary/20 text-secondary rounded-lg flex items-center justify-center mb-6">
-                  <Globe className="h-5 w-5" />
+            {/* Box 3: Powerful Website Crawling (Enhanced with powerful.png) */}
+            <div className="md:col-span-2 bg-[#0e1320] border border-white/5 hover:border-primary/20 p-8 rounded-2xl flex flex-col md:flex-row gap-8 justify-between transition-all duration-300 overflow-hidden">
+              <div className="flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="h-10 w-10 bg-primary/10 border border-primary/20 text-secondary rounded-lg flex items-center justify-center mb-6">
+                    <Globe className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">Powerful Website Crawling</h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                    Scan entire websites and sitemaps with absolute precision. Identify critical technical errors, broken internal paths, and accessibility discrepancies across all pages.
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Powerful Website Crawling</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                  Scan entire websites and sitemaps with absolute precision. Identify critical technical errors, broken internal paths, and accessibility discrepancies across all pages without relying on cloud limitations.
-                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="font-mono text-[10px] text-zinc-400 bg-white/5 border border-white/5 py-1 px-2.5 rounded">
+                    No Proxy Required
+                  </span>
+                  <span className="font-mono text-[10px] text-zinc-400 bg-white/5 border border-white/5 py-1 px-2.5 rounded">
+                    Multi-threaded Engine
+                  </span>
+                </div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                <span className="font-mono text-[10px] text-zinc-400 bg-white/5 border border-white/5 py-1 px-2.5 rounded">
-                  No Proxy Required
-                </span>
-                <span className="font-mono text-[10px] text-zinc-400 bg-white/5 border border-white/5 py-1 px-2.5 rounded">
-                  Multi-threaded Engine
-                </span>
+              <div className="flex-1 relative min-h-[220px] rounded-lg overflow-hidden border border-white/10 bg-white/[0.03] p-1">
+                <img
+                  src="/powerful.png"
+                  alt="CrawlBeast On-Page SEO Issues priority view"
+                  className="w-full h-full object-cover object-top hover:scale-[1.03] transition-transform duration-500"
+                />
               </div>
             </div>
 
-            {/* Box 4: AI Insights */}
-            <div className="md:col-span-2 relative bg-gradient-to-br from-primary/5 via-[#0e1320] to-[#0e1320] border border-white/5 hover:border-primary/20 p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 overflow-hidden">
+            {/* Box 4: AI Insights (Coming Soon, NO image) */}
+            <div className="relative bg-[#0e1320] border border-white/5 hover:border-primary/20 p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 overflow-hidden">
               <span className="absolute top-6 right-6 font-mono text-[10px] font-bold text-warning bg-warning/10 border border-warning/20 py-1 px-3 rounded-full uppercase tracking-wider">
                 Coming Soon
               </span>
@@ -357,34 +556,28 @@ const StaticHomepage: React.FC = () => {
                 <h3 className="text-xl font-bold bg-gradient-to-r from-white to-secondary bg-clip-text text-transparent mb-2">
                   AI-Powered SEO Insights
                 </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed max-w-xl mb-6">
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
                   Turn raw audit data into high-value actionable strategies. Automatically generate detailed explanations, impact scores, and technical fixes.
                 </p>
               </div>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-semibold text-zinc-400">
+              <ul className="space-y-3 text-sm font-semibold text-zinc-400">
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary block" /> Detailed issue explanations
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary block" /> Actionable fix recommendations
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary block" /> Priority scoring based on impact
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary block" /> Content & technical suggestions
-                </li>
               </ul>
             </div>
           </div>
 
           <div className="text-center mt-12">
-            <button
-              onClick={openPopup}
-              className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/15 transition-transform active:scale-95"
+            <a
+              href="/download"
+              className="inline-block bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/15 transition-transform active:scale-95"
             >
               Get Started Today
-            </button>
+            </a>
           </div>
         </div>
       </motion.section>
@@ -639,23 +832,36 @@ const StaticHomepage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div 
-                key={t.name}
-                className="bg-[#0e1320] border border-white/5 hover:border-zinc-800 p-6 rounded-xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
-              >
-                <p className="text-zinc-400 text-xs leading-relaxed mb-6 italic">{t.text}</p>
-                <div className="flex items-center gap-3 pt-4 border-t border-white/5">
-                  <div className="h-8 w-8 bg-primary/10 border border-primary/20 text-secondary text-xs font-bold rounded-full flex items-center justify-center">
-                    {t.initials}
+            {(() => {
+              const avatarGradients = [
+                "from-rose-500 to-indigo-500",
+                "from-cyan-500 to-blue-600",
+                "from-amber-400 to-orange-600",
+                "from-emerald-400 to-teal-600",
+                "from-pink-500 to-rose-600",
+                "from-violet-500 to-fuchsia-600"
+              ];
+              return testimonials.map((t, idx) => {
+                const gradient = avatarGradients[idx % avatarGradients.length];
+                return (
+                  <div 
+                    key={t.name}
+                    className="bg-[#0e1320] border border-white/5 hover:border-zinc-800 p-6 rounded-xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <p className="text-zinc-200 text-sm leading-relaxed mb-6 italic">{t.text}</p>
+                    <div className="flex items-center gap-3 pt-4 border-t border-white/5">
+                      <div className={`h-8 w-8 bg-gradient-to-br ${gradient} text-white text-xs font-extrabold rounded-full flex items-center justify-center shadow-md`}>
+                        {t.initials}
+                      </div>
+                      <div>
+                        <h6 className="text-xs font-bold text-white">{t.name}</h6>
+                        <p className="text-[10px] text-zinc-400 font-medium">{t.role}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h6 className="text-xs font-bold text-white">{t.name}</h6>
-                    <p className="text-[10px] text-zinc-500 font-medium">{t.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+                );
+              });
+            })()}
           </div>
         </div>
       </motion.section>
@@ -737,6 +943,21 @@ const StaticHomepage: React.FC = () => {
                     <p className="text-zinc-400 text-xs leading-relaxed mb-6">{plan.desc}</p>
                     
                     <div className="flex items-baseline gap-1.5 mb-8">
+                      {isYearly && plan.priceMonthly > 0 && (
+                        <span className="text-xl text-zinc-500 line-through mr-2 font-mono font-medium">
+                          ${plan.priceMonthly}
+                        </span>
+                      )}
+                      {!isYearly && plan.priceMonthly === 12 && (
+                        <span className="text-xl text-zinc-500 line-through mr-2 font-mono font-medium">
+                          $18
+                        </span>
+                      )}
+                      {!isYearly && plan.priceMonthly === 22 && (
+                        <span className="text-xl text-zinc-500 line-through mr-2 font-mono font-medium">
+                          $29
+                        </span>
+                      )}
                       <span className="text-4xl md:text-5xl font-extrabold text-white font-mono tracking-tight">
                         ${currentPrice}
                       </span>
@@ -755,16 +976,25 @@ const StaticHomepage: React.FC = () => {
                     </ul>
                   </div>
 
-                  <button
-                    onClick={openPopup}
-                    className={`w-full py-3.5 px-6 rounded-xl text-sm font-semibold transition-all cursor-pointer active:scale-95 ${
-                      plan.featured
-                        ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/10"
-                        : "bg-white/5 border border-white/5 hover:border-zinc-700 text-white"
-                    }`}
-                  >
-                    {plan.cta}
-                  </button>
+                  {plan.priceMonthly === 0 ? (
+                    <a
+                      href="/download"
+                      className="w-full text-center py-3.5 px-6 rounded-xl text-sm font-semibold transition-all cursor-pointer active:scale-95 bg-white/5 border border-white/5 hover:border-zinc-700 text-white"
+                    >
+                      {plan.cta}
+                    </a>
+                  ) : (
+                    <button
+                      onClick={openPopup}
+                      className={`w-full py-3.5 px-6 rounded-xl text-sm font-semibold transition-all cursor-pointer active:scale-95 ${
+                        plan.featured
+                          ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/10"
+                          : "bg-white/5 border border-white/5 hover:border-zinc-700 text-white"
+                      }`}
+                    >
+                      {plan.cta}
+                    </button>
+                  )}
                 </div>
               );
             })}
@@ -834,18 +1064,18 @@ const StaticHomepage: React.FC = () => {
               Your website audit is ready to get smarter. Download CrawlBeast for free and start finding the SEO issues that actually impact rankings.
             </p>
             <div className="flex gap-4">
-              <button
-                onClick={openPopup}
+              <a
+                href="/download"
                 className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/25 hover:brightness-110 active:scale-95 transition-all"
               >
                 Download Now
-              </button>
-              <button
-                onClick={() => window.location.href = '/pricing'}
-                className="bg-white/5 border border-white/10 hover:border-zinc-700 text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer transition-colors"
+              </a>
+              <a
+                href="/pricing"
+                className="bg-white/5 border border-white/10 hover:border-zinc-700 text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer transition-colors flex items-center justify-center"
               >
                 View Pricing
-              </button>
+              </a>
             </div>
           </div>
         </div>
