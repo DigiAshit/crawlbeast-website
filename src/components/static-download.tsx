@@ -17,6 +17,17 @@ const fadeInUp = {
 
 const changelog = [
   {
+    version: "v2.0.0",
+    date: "June 2026",
+    title: "Major V2 Release & Architecture Overhaul",
+    changes: [
+      "Released signed installers for Windows (.exe) and macOS Apple Silicon/Intel (.dmg).",
+      "Overhauled crawl architecture using multi-threaded local processing for massive scale audits.",
+      "Redesigned the desktop user interface for modern, distraction-free visual diagnostics.",
+      "Integrated SQLite database locally for saving and comparing audit histories over time."
+    ]
+  },
+  {
     version: "v1.4.2",
     date: "June 2026",
     title: "Performance tuning & export expansion",
@@ -60,9 +71,9 @@ export default function StaticDownload() {
     // Create and click anchor to trigger real download
     const link = document.createElement("a");
     link.href = platform === "windows"
-      ? "https://github.com/DigiAshit/crawlbeast-download/releases/download/v1/CrawlBeast.Windows.zip"
-      : "https://github.com/DigiAshit/crawlbeast-download/releases/download/v1/CrawlBeast.MAC.dmg.zip";
-    link.download = platform === "windows" ? "CrawlBeast.Windows.zip" : "CrawlBeast.MAC.dmg.zip";
+      ? "https://github.com/DigiAshit/crawlbeast-download/releases/download/v2/CrawlBeast.2.0.0.exe"
+      : "https://github.com/DigiAshit/crawlbeast-download/releases/download/v2/CrawlBeast-2.0.0-arm64.dmg";
+    link.download = platform === "windows" ? "CrawlBeast.2.0.0.exe" : "CrawlBeast-2.0.0-arm64.dmg";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -200,7 +211,7 @@ export default function StaticDownload() {
               On macOS
             </h3>
             <ol className="list-decimal pl-5 text-xs text-zinc-400 space-y-2">
-              <li>Open the downloaded <code className="text-accent-blue">CrawlBeast.dmg</code> file.</li>
+              <li>Open the downloaded <code className="text-accent-blue">CrawlBeast-2.0.0-arm64.dmg</code> file.</li>
               <li>Drag the CrawlBeast icon into your Applications folder.</li>
               <li>Double-click the app icon to run it from Applications.</li>
             </ol>
@@ -212,7 +223,7 @@ export default function StaticDownload() {
               On Windows
             </h3>
             <ol className="list-decimal pl-5 text-xs text-zinc-400 space-y-2">
-              <li>Double-click the downloaded <code className="text-accent-blue">CrawlBeast.msi</code> installer file.</li>
+              <li>Double-click the downloaded <code className="text-accent-blue">CrawlBeast.2.0.0.exe</code> installer file.</li>
               <li>Follow the standard Windows setup wizard screens.</li>
               <li>Launch the application using the desktop shortcut icon.</li>
             </ol>
