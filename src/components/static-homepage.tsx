@@ -430,12 +430,12 @@ Get started free forever. Crawl 1,000 URLs & manage 5 projects with no credit ca
           </div>
 
           <div className="text-center mt-12">
-            <a
-              href="/download"
-              className="inline-block bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/15 transition-transform active:scale-95"
+            <button
+              onClick={openPopup}
+              className="inline-block bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/15 transition-transform active:scale-95 border-0 outline-none"
             >
               Download Now
-            </a>
+            </button>
           </div>
         </div>
       </motion.section>
@@ -572,12 +572,12 @@ Get started free forever. Crawl 1,000 URLs & manage 5 projects with no credit ca
           </div>
 
           <div className="text-center mt-12">
-            <a
-              href="/download"
-              className="inline-block bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/15 transition-transform active:scale-95"
+            <button
+              onClick={openPopup}
+              className="inline-block bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/15 transition-transform active:scale-95 border-0 outline-none"
             >
               Get Started Today
-            </a>
+            </button>
           </div>
         </div>
       </motion.section>
@@ -976,25 +976,16 @@ Get started free forever. Crawl 1,000 URLs & manage 5 projects with no credit ca
                     </ul>
                   </div>
 
-                  {plan.priceMonthly === 0 ? (
-                    <a
-                      href="/download"
-                      className="w-full text-center py-3.5 px-6 rounded-xl text-sm font-semibold transition-all cursor-pointer active:scale-95 bg-white/5 border border-white/5 hover:border-zinc-700 text-white"
-                    >
-                      {plan.cta}
-                    </a>
-                  ) : (
-                    <button
-                      onClick={openPopup}
-                      className={`w-full py-3.5 px-6 rounded-xl text-sm font-semibold transition-all cursor-pointer active:scale-95 ${
-                        plan.featured
-                          ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/10"
-                          : "bg-white/5 border border-white/5 hover:border-zinc-700 text-white"
-                      }`}
-                    >
-                      {plan.cta}
-                    </button>
-                  )}
+                  <button
+                    onClick={openPopup}
+                    className={`w-full py-3.5 px-6 rounded-xl text-sm font-semibold transition-all cursor-pointer active:scale-95 ${
+                      plan.featured
+                        ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/10"
+                        : "bg-white/5 border border-white/5 hover:border-zinc-700 text-white"
+                    }`}
+                  >
+                    {plan.cta}
+                  </button>
                 </div>
               );
             })}
@@ -1064,12 +1055,12 @@ Get started free forever. Crawl 1,000 URLs & manage 5 projects with no credit ca
               Your website audit is ready to get smarter. Download CrawlBeast for free and start finding the SEO issues that actually impact rankings.
             </p>
             <div className="flex gap-4">
-              <a
-                href="/download"
-                className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/25 hover:brightness-110 active:scale-95 transition-all"
+              <button
+                onClick={openPopup}
+                className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg shadow-primary/25 hover:brightness-110 active:scale-95 transition-all border-0 outline-none"
               >
                 Download Now
-              </a>
+              </button>
               <a
                 href="/pricing"
                 className="bg-white/5 border border-white/10 hover:border-zinc-700 text-white font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer transition-colors flex items-center justify-center"
