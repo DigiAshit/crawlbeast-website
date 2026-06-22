@@ -77,6 +77,8 @@ export const settingsQuery = groq`
     googleAnalyticsId,
     googleTagManagerId,
     microsoftClarityId,
+    customHeadHtml,
+    customHeadScripts,
     socialProfiles[] {
       platform,
       url

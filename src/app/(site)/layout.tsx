@@ -116,6 +116,16 @@ export default async function RootLayout({
             }}
           />
         )}
+
+        {/* Custom Head HTML Injection */}
+        {settings?.customHeadHtml && (
+          <style dangerouslySetInnerHTML={{ __html: `</style>${settings.customHeadHtml}<style>` }} />
+        )}
+
+        {/* Custom Head Scripts Injection */}
+        {settings?.customHeadScripts && (
+          <style dangerouslySetInnerHTML={{ __html: `</style>${settings.customHeadScripts}<style>` }} />
+        )}
       </head>
       <body className="min-h-full flex flex-col bg-[#07090E] text-[#F8FAFC]">
         <PopupProvider>

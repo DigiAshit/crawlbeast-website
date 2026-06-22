@@ -93,6 +93,22 @@ export default defineType({
       type: 'string',
       group: 'analytics',
     }),
+    defineField({
+      name: 'customHeadHtml',
+      title: 'Custom Head HTML',
+      description: 'Add any HTML tags (e.g. <meta>, <link>) directly to the head of all pages.',
+      type: 'text',
+      rows: 4,
+      group: 'analytics',
+    }),
+    defineField({
+      name: 'customHeadScripts',
+      title: 'Custom Head Scripts',
+      description: 'Add any script tags (e.g. <script>...</script> or external scripts) to the head of all pages.',
+      type: 'text',
+      rows: 4,
+      group: 'analytics',
+    }),
 
     // --- Social Profiles Tab ---
     defineField({
