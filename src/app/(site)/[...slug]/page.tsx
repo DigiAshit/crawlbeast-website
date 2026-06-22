@@ -18,17 +18,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   try {
     const page = await client.fetch(pageBySlugQuery, { slug: slugPath })
     if (!page) {
-      return {
-        title: 'Page Not Found | CrawlBeast',
-        description: 'The page you are looking for does not exist.',
-      }
+      return await getPageMetadata(undefined, "Page Not Found");
     }
     return await getPageMetadata(page.seoSettings, page.title)
   } catch (err) {
     console.error('Error generating metadata:', err)
-    return {
-      title: 'CrawlBeast',
-    }
+    return await getPageMetadata(undefined, "Page Not Found");
   }
 }
 

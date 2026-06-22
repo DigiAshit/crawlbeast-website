@@ -9,17 +9,12 @@ export async function generateMetadata(): Promise<Metadata> {
   try {
     const page = await client.fetch(pageBySlugQuery, { slug: "pricing" });
     if (!page) {
-      return {
-        title: "Pricing Plans | CrawlBeast",
-        description: "Simple, transparent pricing. Start free, upgrade when you need more crawling power and advanced reporting.",
-      };
+      return await getPageMetadata(undefined, "Pricing Plans");
     }
     return await getPageMetadata(page.seoSettings, page.title);
   } catch (err) {
     console.error("Error generating metadata for pricing:", err);
-    return {
-      title: "Pricing Plans | CrawlBeast",
-    };
+    return await getPageMetadata(undefined, "Pricing Plans");
   }
 }
 

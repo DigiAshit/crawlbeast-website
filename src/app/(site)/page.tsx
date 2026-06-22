@@ -9,20 +9,12 @@ export async function generateMetadata(): Promise<Metadata> {
   try {
     const page = await client.fetch(pageBySlugQuery, { slug: "/" });
     if (!page) {
-      return {
-        title: "CrawlBeast | Desktop SEO Auditing Application",
-        description: "Run powerful SEO audits directly from your desktop. Analyze websites, uncover critical issues, and turn data into actionable insights faster than ever.",
-        icons: {
-          icon: "/crawlBeast.png",
-        }
-      };
+      return await getPageMetadata(undefined, "CrawlBeast | Turn SEO Insights Into Revenue");
     }
     return await getPageMetadata(page.seoSettings, page.title);
   } catch (err) {
     console.error("Error generating metadata for homepage:", err);
-    return {
-      title: "CrawlBeast | Desktop SEO Auditing Application",
-    };
+    return await getPageMetadata(undefined, "CrawlBeast | Turn SEO Insights Into Revenue");
   }
 }
 

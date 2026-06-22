@@ -9,17 +9,12 @@ export async function generateMetadata(): Promise<Metadata> {
   try {
     const page = await client.fetch(pageBySlugQuery, { slug: "download" });
     if (!page) {
-      return {
-        title: "Download CrawlBeast | Desktop SEO Auditing Application",
-        description: "Download CrawlBeast and start finding technical SEO issues locally on your desktop.",
-      };
+      return await getPageMetadata(undefined, "Download CrawlBeast");
     }
     return await getPageMetadata(page.seoSettings, page.title);
   } catch (err) {
     console.error("Error generating metadata for download:", err);
-    return {
-      title: "Download CrawlBeast",
-    };
+    return await getPageMetadata(undefined, "Download CrawlBeast");
   }
 }
 
