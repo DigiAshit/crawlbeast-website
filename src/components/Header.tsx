@@ -6,7 +6,12 @@ import { usePopup } from "./PopupContext";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  siteName?: string;
+  logoUrl?: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ siteName = "CrawlBeast", logoUrl = "/crawlBeast.png" }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -40,12 +45,12 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <img
-              src="/crawlBeast.png"
-              alt="CrawlBeast"
+              src={logoUrl || "/crawlBeast.png"}
+              alt={siteName || "CrawlBeast"}
               className="h-9 w-auto object-contain rounded-lg transition-transform group-hover:scale-105"
             />
             <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">
-              CrawlBeast
+              {siteName || "CrawlBeast"}
             </span>
           </Link>
 

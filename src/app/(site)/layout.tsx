@@ -4,7 +4,13 @@ import { PopupProvider } from "@/components/PopupContext";
 import PopupDialog from "@/components/PopupDialog";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { client, urlFor } from "@/lib/sanity.client";
+import { settingsQuery } from "@/lib/sanity.queries";
+import Script from "next/script";
 import "../globals.css";
+
+// Revalidate all pages using this layout every 60 seconds
+export const revalidate = 60;
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -32,24 +38,92 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  let settings: any = null;
+  try {
+    settings = await client.fetch(settingsQuery);
+  } catch (err) {
+    console.error("Error fetching site settings in RootLayout:", err);
+  }
+
+  const companyLogoUrl = settings?.companyLogo 
+    ? urlFor(settings.companyLogo).url() 
+    : undefined;
+
   return (
     <html
       lang="en"
       className={`${poppins.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
       style={{ colorScheme: "dark" }}
     >
+      <head>
+        {/* Google Tag Manager */}
+        {settings?.googleTagManagerId && (
+          <Script
+            id="gtm-script"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','${settings.googleTagManagerId}');
+              `,
+            }}
+          />
+        )}
+
+        {/* Google Analytics */}
+        {settings?.googleAnalyticsId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${settings.googleAnalyticsId}`}
+              strategy="afterInteractive"
+            />
+            <Script
+              id="ga-script"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${settings.googleAnalyticsId}');
+                `,
+              }}
+            />
+          </>
+        )}
+
+        {/* Microsoft Clarity */}
+        {settings?.microsoftClarityId && (
+          <Script
+            id="clarity-script"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function(c,l,a,r,i,t,y){
+                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window,document,"clarity","script","${settings.microsoftClarityId}");
+              `,
+            }}
+          />
+        )}
+      </head>
       <body className="min-h-full flex flex-col bg-[#07090E] text-[#F8FAFC]">
         <PopupProvider>
           {/* Download Dialog Modal */}
           <PopupDialog />
 
           {/* Sticky Header */}
-          <Header />
+          <Header siteName={settings?.siteName} logoUrl={companyLogoUrl} />
           
           {/* Main App Page content */}
           <div className="flex flex-col flex-1 pt-[80px]">
@@ -57,7 +131,12 @@ export default function RootLayout({
           </div>
           
           {/* General Footer */}
-          <Footer />
+          <Footer 
+            siteName={settings?.siteName} 
+            companyName={settings?.companyName} 
+            supportEmail={settings?.supportEmail}
+            socialProfiles={settings?.socialProfiles}
+          />
         </PopupProvider>
       </body>
     </html>
