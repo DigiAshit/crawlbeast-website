@@ -68,6 +68,8 @@ const plans = [
     desc: "Perfect for beginners and small audits.",
     monthlyPrice: 0,
     yearlyPrice: 0,
+    checkoutMonthly: "",
+    checkoutYearly: "",
     buttonText: "Download Now",
     popular: false,
     features: [
@@ -84,6 +86,8 @@ const plans = [
     desc: "For freelancers and SEO professionals.",
     monthlyPrice: 12,
     yearlyPrice: 9,
+    checkoutMonthly: "https://www.paypal.com/ncp/payment/EVX34UPNF7EC8",
+    checkoutYearly: "https://www.paypal.com/ncp/payment/ALV4LALEARJ3Y",
     buttonText: "Start Now",
     popular: true,
     features: [
@@ -100,6 +104,8 @@ const plans = [
     desc: "For agencies and heavy users.",
     monthlyPrice: 22,
     yearlyPrice: 19,
+    checkoutMonthly: "https://www.paypal.com/ncp/payment/YJGLX5PWARBWQ",
+    checkoutYearly: "https://www.paypal.com/ncp/payment/UTYNT6T3ZZXUA",
     buttonText: "Start Now",
     popular: false,
     features: [
@@ -225,13 +231,25 @@ export default function StaticPricing() {
               </div>
 
               <div className="mt-8">
-                <button
-                  onClick={triggerModal}
-                  className="w-full group flex items-center justify-center gap-1.5 rounded-xl py-3 text-sm font-semibold transition-all cursor-pointer bg-primary text-white hover:bg-blue-600 shadow-[0_4px_20px_rgba(6,118,254,0.15)]"
-                >
-                  {plan.buttonText}
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                </button>
+                {plan.monthlyPrice === 0 ? (
+                  <button
+                    onClick={triggerModal}
+                    className="w-full group flex items-center justify-center gap-1.5 rounded-xl py-3 text-sm font-semibold transition-all cursor-pointer bg-primary text-white hover:bg-blue-600 shadow-[0_4px_20px_rgba(6,118,254,0.15)]"
+                  >
+                    {plan.buttonText}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </button>
+                ) : (
+                  <a
+                    href={isYearly ? plan.checkoutYearly : plan.checkoutMonthly}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full block text-center group flex items-center justify-center gap-1.5 rounded-xl py-3 text-sm font-semibold transition-all cursor-pointer bg-primary text-white hover:bg-blue-600 shadow-[0_4px_20px_rgba(6,118,254,0.15)]"
+                  >
+                    {plan.buttonText}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </a>
+                )}
               </div>
             </motion.div>
           );

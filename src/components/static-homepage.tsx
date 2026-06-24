@@ -122,7 +122,9 @@ const StaticHomepage: React.FC = () => {
         "No credit card required"
       ],
       cta: "Download Now",
-      featured: false
+      featured: false,
+      checkoutMonthly: "",
+      checkoutYearly: ""
     },
     {
       name: "Pro Plan",
@@ -138,7 +140,9 @@ const StaticHomepage: React.FC = () => {
         "Email Support"
       ],
       cta: "Start Now",
-      featured: true
+      featured: true,
+      checkoutMonthly: "https://www.paypal.com/ncp/payment/EVX34UPNF7EC8",
+      checkoutYearly: "https://www.paypal.com/ncp/payment/ALV4LALEARJ3Y"
     },
     {
       name: "Advanced Plan",
@@ -154,7 +158,9 @@ const StaticHomepage: React.FC = () => {
         "Email Support"
       ],
       cta: "Start Now",
-      featured: false
+      featured: false,
+      checkoutMonthly: "https://www.paypal.com/ncp/payment/YJGLX5PWARBWQ",
+      checkoutYearly: "https://www.paypal.com/ncp/payment/UTYNT6T3ZZXUA"
     }
   ];
 
@@ -976,16 +982,27 @@ Get started free forever. Crawl 1,000 URLs & manage 5 projects with no credit ca
                     </ul>
                   </div>
 
-                  <button
-                    onClick={openPopup}
-                    className={`w-full py-3.5 px-6 rounded-xl text-sm font-semibold transition-all cursor-pointer active:scale-95 ${
-                      plan.featured
-                        ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/10"
-                        : "bg-white/5 border border-white/5 hover:border-zinc-700 text-white"
-                    }`}
-                  >
-                    {plan.cta}
-                  </button>
+                  {plan.priceMonthly === 0 ? (
+                    <button
+                      onClick={openPopup}
+                      className="w-full py-3.5 px-6 rounded-xl text-sm font-semibold transition-all cursor-pointer active:scale-95 bg-white/5 border border-white/5 hover:border-zinc-700 text-white"
+                    >
+                      {plan.cta}
+                    </button>
+                  ) : (
+                    <a
+                      href={isYearly ? plan.checkoutYearly : plan.checkoutMonthly}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full block text-center py-3.5 px-6 rounded-xl text-sm font-semibold transition-all cursor-pointer active:scale-95 ${
+                        plan.featured
+                          ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/10"
+                          : "bg-white/5 border border-white/5 hover:border-zinc-700 text-white"
+                      }`}
+                    >
+                      {plan.cta}
+                    </a>
+                  )}
                 </div>
               );
             })}
