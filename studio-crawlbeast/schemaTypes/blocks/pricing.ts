@@ -65,6 +65,16 @@ export default defineType({
               initialValue: false,
             }),
             defineField({
+              name: 'checkoutMonthly',
+              title: 'Checkout Monthly URL',
+              type: 'url',
+            }),
+            defineField({
+              name: 'checkoutYearly',
+              title: 'Checkout Yearly URL',
+              type: 'url',
+            }),
+            defineField({
               name: 'features',
               title: 'Features Included',
               type: 'array',

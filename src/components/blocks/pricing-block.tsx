@@ -22,6 +22,8 @@ interface PlanItem {
   buttonText?: string;
   popular?: boolean;
   features: string[];
+  checkoutMonthly?: string;
+  checkoutYearly?: string;
 }
 
 interface PricingBlockProps {
@@ -117,13 +119,53 @@ export default function PricingBlock({
               </div>
 
               <div className="mt-8">
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="w-full group flex items-center justify-center gap-1.5 rounded-xl py-3 text-sm font-semibold transition-all cursor-pointer bg-[#0A39F0] text-white hover:bg-[#002bd6] shadow-[0_4px_20px_rgba(10,57,240,0.3)]"
-                >
-                  {plan.buttonText || "Start Now"}
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                </button>
+                {(() => {
+                  const isFree = plan.monthlyPrice === 0;
+                  let checkoutUrl = "";
+                  
+                  if (!isFree) {
+                    if (isYearlyBilling && plan.checkoutYearly) {
+                      checkoutUrl = plan.checkoutYearly;
+                    } else if (!isYearlyBilling && plan.checkoutMonthly) {
+                      checkoutUrl = plan.checkoutMonthly;
+                    } else {
+                      const nameLower = plan.name.toLowerCase();
+                      if (nameLower.includes("pro")) {
+                        checkoutUrl = isYearlyBilling
+                          ? "https://www.paypal.com/ncp/payment/ALV4LALEARJ3Y"
+                          : "https://www.paypal.com/ncp/payment/EVX34UPNF7EC8";
+                      } else if (nameLower.includes("advanced")) {
+                        checkoutUrl = isYearlyBilling
+                          ? "https://www.paypal.com/ncp/payment/UTYNT6T3ZZXUA"
+                          : "https://www.paypal.com/ncp/payment/YJGLX5PWARBWQ";
+                      }
+                    }
+                  }
+
+                  if (isFree || !checkoutUrl) {
+                    return (
+                      <button
+                        onClick={() => setIsModalOpen(true)}
+                        className="w-full group flex items-center justify-center gap-1.5 rounded-xl py-3 text-sm font-semibold transition-all cursor-pointer bg-[#0A39F0] text-white hover:bg-[#002bd6] shadow-[0_4px_20px_rgba(10,57,240,0.3)]"
+                      >
+                        {plan.buttonText || "Download Now"}
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                      </button>
+                    );
+                  }
+
+                  return (
+                    <a
+                      href={checkoutUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full block text-center group flex items-center justify-center gap-1.5 rounded-xl py-3 text-sm font-semibold transition-all cursor-pointer bg-[#0A39F0] text-white hover:bg-[#002bd6] shadow-[0_4px_20px_rgba(10,57,240,0.3)]"
+                    >
+                      {plan.buttonText || "Start Now"}
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                    </a>
+                  );
+                })()}
               </div>
             </div>
           );
