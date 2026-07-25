@@ -85,3 +85,35 @@ export const settingsQuery = groq`
     }
   }
 `
+
+export const postsQuery = groq`
+  *[_type == "post"] | order(date desc) {
+    title,
+    "slug": slug.current,
+    category,
+    author,
+    date,
+    readingTime,
+    "featuredImage": featuredImage.asset->url,
+    metaTitle,
+    metaDescription,
+    content,
+    keywords
+  }
+`
+
+export const postBySlugQuery = groq`
+  *[_type == "post" && slug.current == $slug][0] {
+    title,
+    "slug": slug.current,
+    category,
+    author,
+    date,
+    readingTime,
+    "featuredImage": featuredImage.asset->url,
+    metaTitle,
+    metaDescription,
+    content,
+    keywords
+  }
+`

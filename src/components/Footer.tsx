@@ -108,6 +108,7 @@ const Footer: React.FC<FooterProps> = ({
           <ul className="flex flex-col gap-3 text-sm text-zinc-400 font-medium">
             <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
             <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
+            <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
             <li><Link href="/docs" className="hover:text-white transition-colors">Documentation</Link></li>
             <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
           </ul>

@@ -4,6 +4,7 @@ import PageBuilder from "@/components/page-builder";
 import StaticDownload from "@/components/static-download";
 import { getPageMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
+import GatedDownload from "@/components/GatedDownload";
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
@@ -29,7 +30,7 @@ export default async function DownloadPage() {
   if (page && page.contentBlocks && page.contentBlocks.length > 0) {
     const structuredData = page.seoSettings?.structuredData;
     return (
-      <>
+      <GatedDownload>
         <div className="relative min-h-screen bg-black overflow-hidden bg-grid-noise py-20 px-6">
           <div className="absolute inset-0 pointer-events-none bg-radial-gradient" />
           <div className="absolute inset-0 pointer-events-none bg-bottom-radial-gradient" />
@@ -41,9 +42,13 @@ export default async function DownloadPage() {
             dangerouslySetInnerHTML={{ __html: structuredData }}
           />
         )}
-      </>
+      </GatedDownload>
     );
   }
 
-  return <StaticDownload />;
+  return (
+    <GatedDownload>
+      <StaticDownload />
+    </GatedDownload>
+  );
 }

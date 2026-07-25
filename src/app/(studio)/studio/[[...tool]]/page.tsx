@@ -3,7 +3,7 @@ import { Studio } from './Studio'
 
 export const metadata = studioMetadata
 export const viewport = studioViewport
-export const dynamic = 'force-static'
+export const dynamic = 'force-dynamic'
 
 export default function StudioPage() {
   return <Studio />

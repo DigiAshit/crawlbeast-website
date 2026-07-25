@@ -10,6 +10,7 @@ import blockChangelog from './blocks/changelog'
 import page from './page'
 import settings from './settings'
 import lead from './leads'
+import post from './post'
 
 export const schemaTypes = [
   seoSettings,
@@ -24,4 +25,5 @@ export const schemaTypes = [
   page,
   settings,
   lead,
+  post,
 ]

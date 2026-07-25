@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Agency SEO audit workflow</title>
+  <desc id="desc">A workflow showing how agencies move from website crawl to issue prioritization, reporting, fixes, and re-crawling.</desc>
+  <rect width="1200" height="620" fill="#f7f9fc"/>
+  <text x="80" y="78" fill="#10243f" font-family="Arial, sans-serif" font-size="38" font-weight="700">Repeatable Agency SEO Audit Workflow</text>
+  <text x="80" y="118" fill="#52657a" font-family="Arial, sans-serif" font-size="20">A practical flow for turning crawl data into client-approved action.</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="80" y="190" width="180" height="120" rx="16" fill="#e8f4ff" stroke="#b8dfff"/>
+    <text x="118" y="242" fill="#10243f" font-size="22" font-weight="700">1. Crawl</text>
+    <text x="108" y="275" fill="#52657a" font-size="16">Collect URL data</text>
+    <rect x="305" y="190" width="180" height="120" rx="16" fill="#fff7e6" stroke="#ffe0a3"/>
+    <text x="342" y="242" fill="#10243f" font-size="22" font-weight="700">2. Detect</text>
+    <text x="331" y="275" fill="#52657a" font-size="16">Find SEO issues</text>
+    <rect x="530" y="190" width="180" height="120" rx="16" fill="#fff0f0" stroke="#ffc2c2"/>
+    <text x="560" y="242" fill="#10243f" font-size="22" font-weight="700">3. Prioritize</text>
+    <text x="561" y="275" fill="#52657a" font-size="16">Sort by impact</text>
+    <rect x="755" y="190" width="180" height="120" rx="16" fill="#eefaf5" stroke="#bfead9"/>
+    <text x="793" y="242" fill="#10243f" font-size="22" font-weight="700">4. Report</text>
+    <text x="783" y="275" fill="#52657a" font-size="16">Explain fixes</text>
+    <rect x="980" y="190" width="140" height="120" rx="16" fill="#f2efff" stroke="#d6ccff"/>
+    <text x="1006" y="242" fill="#10243f" font-size="22" font-weight="700">5. Fix</text>
+    <text x="1004" y="275" fill="#52657a" font-size="16">Ship updates</text>
+  </g>
+  <g stroke="#8aa0b8" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M260 250h45"/>
+    <path d="M485 250h45"/>
+    <path d="M710 250h45"/>
+    <path d="M935 250h45"/>
+  </g>
+  <g fill="#8aa0b8">
+    <path d="M304 250l-12-8v16z"/>
+    <path d="M529 250l-12-8v16z"/>
+    <path d="M754 250l-12-8v16z"/>
+    <path d="M979 250l-12-8v16z"/>
+  </g>
+  <path d="M1050 330c0 105-770 105-770 0" fill="none" stroke="#2784d8" stroke-width="6" stroke-linecap="round" stroke-dasharray="12 14"/>
+  <path d="M280 330l15 25h-30z" fill="#2784d8"/>
+  <text x="438" y="444" fill="#10243f" font-family="Arial, sans-serif" font-size="24" font-weight="700">Re-crawl after fixes to confirm progress</text>
+  <rect x="210" y="495" width="780" height="58" rx="14" fill="#ffffff" stroke="#d9e2ef"/>
+  <text x="252" y="532" fill="#52657a" font-family="Arial, sans-serif" font-size="20">Tools like CrawlBeast help agencies make this process consistent across clients.</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Website audit report sections</title>
+  <desc id="desc">A visual outline of the sections every client website audit report should include.</desc>
+  <rect width="1200" height="720" fill="#ffffff"/>
+  <text x="80" y="78" fill="#10243f" font-family="Arial, sans-serif" font-size="38" font-weight="700">What to Include in a Website Audit Report</text>
+  <text x="80" y="118" fill="#52657a" font-family="Arial, sans-serif" font-size="20">Turn crawl data into a report clients and developers can act on.</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="90" y="178" width="310" height="130" rx="16" fill="#e8f4ff" stroke="#b8dfff"/>
+    <text x="125" y="232" fill="#10243f" font-size="22" font-weight="700">Executive Summary</text>
+    <text x="125" y="265" fill="#52657a" font-size="17">Main risks, wins, and priorities</text>
+    <rect x="445" y="178" width="310" height="130" rx="16" fill="#fff7e6" stroke="#ffe0a3"/>
+    <text x="480" y="232" fill="#10243f" font-size="22" font-weight="700">Technical Findings</text>
+    <text x="480" y="265" fill="#52657a" font-size="17">Crawlability, indexability, links</text>
+    <rect x="800" y="178" width="310" height="130" rx="16" fill="#fff0f0" stroke="#ffc2c2"/>
+    <text x="835" y="232" fill="#10243f" font-size="22" font-weight="700">Issue Priority</text>
+    <text x="835" y="265" fill="#52657a" font-size="17">Critical, high, medium, low</text>
+    <rect x="90" y="380" width="310" height="130" rx="16" fill="#eefaf5" stroke="#bfead9"/>
+    <text x="125" y="434" fill="#10243f" font-size="22" font-weight="700">Recommended Fixes</text>
+    <text x="125" y="467" fill="#52657a" font-size="17">Clear tasks for the right owner</text>
+    <rect x="445" y="380" width="310" height="130" rx="16" fill="#f2efff" stroke="#d6ccff"/>
+    <text x="480" y="434" fill="#10243f" font-size="22" font-weight="700">Business Impact</text>
+    <text x="480" y="467" fill="#52657a" font-size="17">Why each fix matters</text>
+    <rect x="800" y="380" width="310" height="130" rx="16" fill="#e8f4ff" stroke="#b8dfff"/>
+    <text x="835" y="434" fill="#10243f" font-size="22" font-weight="700">Action Plan</text>
+    <text x="835" y="467" fill="#52657a" font-size="17">Next steps and re-audit timing</text>
+  </g>
+  <rect x="185" y="590" width="830" height="54" rx="14" fill="#f7f9fc" stroke="#d9e2ef"/>
+  <text x="228" y="625" fill="#52657a" font-family="Arial, sans-serif" font-size="19">A strong report turns technical SEO work into decisions, ownership, and progress.</text>
+</svg>

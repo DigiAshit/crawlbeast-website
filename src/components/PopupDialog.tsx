@@ -1,16 +1,41 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { usePopup } from "./PopupContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Mail, User, CheckCircle, ArrowRight } from "lucide-react";
 
 const PopupDialog: React.FC = () => {
-  const { isOpen, closePopup } = usePopup();
+  const { isOpen, isGated, closePopup } = usePopup();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+
+  // Toggle body scroll
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  // Block Escape key when gated
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        if (!isGated && !isLoading && !isSubmitted) {
+          closePopup();
+        }
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isGated, isLoading, isSubmitted, closePopup]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,13 +78,26 @@ const PopupDialog: React.FC = () => {
       setIsLoading(false);
       setIsSubmitted(true);
       
+      // Store flag in localStorage with 30 days expiration
+      const unlockData = {
+        unlocked: true,
+        timestamp: Date.now()
+      };
+      localStorage.setItem("crawlbeast_download_unlocked", JSON.stringify(unlockData));
+      
       // Delay closing modal and redirecting
       setTimeout(() => {
         setIsSubmitted(false);
         setName("");
         setEmail("");
         closePopup();
-        window.location.href = `/download?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
+        
+        // If already on download page, no need to redirect
+        if (window.location.pathname.startsWith("/download")) {
+          // closePopup updates the page reactively
+        } else {
+          window.location.href = `/download?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
+        }
       }, 1500);
     } catch (err: any) {
       setIsLoading(false);
@@ -77,7 +115,7 @@ const PopupDialog: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => {
-              if (!isLoading && !isSubmitted) closePopup();
+              if (!isGated && !isLoading && !isSubmitted) closePopup();
             }}
             className="fixed inset-0 bg-black/75 backdrop-blur-md"
           />
@@ -94,7 +132,7 @@ const PopupDialog: React.FC = () => {
             <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-primary to-secondary" />
 
             {/* Close Button */}
-            {!isLoading && !isSubmitted && (
+            {!isLoading && !isSubmitted && !isGated && (
               <button
                 onClick={closePopup}
                 className="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors p-1 hover:bg-white/5 rounded-full"

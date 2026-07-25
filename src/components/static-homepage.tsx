@@ -132,7 +132,7 @@ const StaticHomepage: React.FC = () => {
       priceMonthly: 12,
       priceYearly: 9,
       features: [
-        "Crawl up to 20,000 URLs",
+        "Crawl up to 50,000 URLs",
         "Up to 100 active projects",
         "All SEO checks enabled",
         "Faster crawling performance",

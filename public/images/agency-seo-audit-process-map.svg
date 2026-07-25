@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">SEO audit process map for agencies</title>
+  <desc id="desc">A process map showing eight stages agencies use to complete SEO audits from intake through monitoring.</desc>
+  <rect width="1200" height="720" fill="#ffffff"/>
+  <text x="80" y="78" fill="#10243f" font-family="Arial, sans-serif" font-size="38" font-weight="700">Agency SEO Audit Process Map</text>
+  <text x="80" y="118" fill="#52657a" font-family="Arial, sans-serif" font-size="20">A repeatable checklist for consistent technical SEO delivery.</text>
+  <g font-family="Arial, sans-serif" font-size="18">
+    <rect x="80" y="175" width="230" height="92" rx="14" fill="#e8f4ff" stroke="#b8dfff"/>
+    <text x="112" y="230" fill="#10243f" font-weight="700">1. Intake and Scope</text>
+    <rect x="365" y="175" width="230" height="92" rx="14" fill="#fff7e6" stroke="#ffe0a3"/>
+    <text x="397" y="230" fill="#10243f" font-weight="700">2. Run the Crawl</text>
+    <rect x="650" y="175" width="230" height="92" rx="14" fill="#fff0f0" stroke="#ffc2c2"/>
+    <text x="682" y="230" fill="#10243f" font-weight="700">3. Find Issues</text>
+    <rect x="935" y="175" width="185" height="92" rx="14" fill="#eefaf5" stroke="#bfead9"/>
+    <text x="962" y="230" fill="#10243f" font-weight="700">4. Prioritize</text>
+    <rect x="80" y="392" width="230" height="92" rx="14" fill="#f2efff" stroke="#d6ccff"/>
+    <text x="112" y="447" fill="#10243f" font-weight="700">8. Monitor</text>
+    <rect x="365" y="392" width="230" height="92" rx="14" fill="#eefaf5" stroke="#bfead9"/>
+    <text x="397" y="447" fill="#10243f" font-weight="700">7. Validate Fixes</text>
+    <rect x="650" y="392" width="230" height="92" rx="14" fill="#e8f4ff" stroke="#b8dfff"/>
+    <text x="682" y="447" fill="#10243f" font-weight="700">6. Assign Work</text>
+    <rect x="935" y="392" width="185" height="92" rx="14" fill="#fff7e6" stroke="#ffe0a3"/>
+    <text x="962" y="447" fill="#10243f" font-weight="700">5. Report</text>
+  </g>
+  <g stroke="#8aa0b8" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M310 221h55"/>
+    <path d="M595 221h55"/>
+    <path d="M880 221h55"/>
+    <path d="M1028 267v125"/>
+    <path d="M935 438h-55"/>
+    <path d="M650 438h-55"/>
+    <path d="M365 438h-55"/>
+  </g>
+  <g fill="#8aa0b8">
+    <path d="M364 221l-12-8v16z"/>
+    <path d="M649 221l-12-8v16z"/>
+    <path d="M934 221l-12-8v16z"/>
+    <path d="M1028 391l8-12h-16z"/>
+    <path d="M881 438l12-8v16z"/>
+    <path d="M596 438l12-8v16z"/>
+    <path d="M311 438l12-8v16z"/>
+  </g>
+  <rect x="170" y="585" width="860" height="54" rx="14" fill="#f7f9fc" stroke="#d9e2ef"/>
+  <text x="222" y="620" fill="#52657a" font-family="Arial, sans-serif" font-size="19">Use the same process every time, then customize recommendations by client impact.</text>
+</svg>

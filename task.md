@@ -1,0 +1,7 @@
+- [x] Modify `src/components/static-homepage.tsx` to add `checkoutMonthly` and `checkoutYearly` URLs to pricing plans and update CTA rendering logic
+- [x] Modify `src/components/static-pricing.tsx` to add `checkoutMonthly` and `checkoutYearly` URLs to pricing plans and update CTA rendering logic
+- [x] Fix pricing popup in dynamic `PricingBlock` (`src/components/blocks/pricing-block.tsx`) by mapping names to PayPal checkouts and adding support for Sanity schema properties
+- [x] Update Sanity block pricing schema (`studio-crawlbeast/schemaTypes/blocks/pricing.ts`) to support `checkoutMonthly` and `checkoutYearly`
+- [x] Verify compilation and static generation with local build (`npm run build`)
+- [x] Commit and push changes to GitHub `main` branch
+- [x] Deploy build to live Vercel production website

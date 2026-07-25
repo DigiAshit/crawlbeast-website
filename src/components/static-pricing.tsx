@@ -91,7 +91,7 @@ const plans = [
     buttonText: "Start Now",
     popular: true,
     features: [
-      "Crawl up to 20,000 URLs",
+      "Crawl up to 50,000 URLs",
       "Up to 100 projects",
       "All SEO checks",
       "Faster crawling performance",

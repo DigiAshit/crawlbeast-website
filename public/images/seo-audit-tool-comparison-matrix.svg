@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">SEO audit tool comparison matrix</title>
+  <desc id="desc">A matrix comparing SEO audit tools for crawling depth, reporting, scalability, and agency workflow fit.</desc>
+  <rect width="1200" height="700" fill="#ffffff"/>
+  <text x="80" y="80" fill="#10243f" font-family="Arial, sans-serif" font-size="38" font-weight="700">Agency SEO Audit Tool Comparison</text>
+  <text x="80" y="122" fill="#52657a" font-family="Arial, sans-serif" font-size="20">Use this matrix to shortlist tools by workflow fit, not just feature count.</text>
+  <rect x="80" y="165" width="1040" height="440" rx="18" fill="#f7f9fc" stroke="#d9e2ef"/>
+  <rect x="80" y="165" width="1040" height="64" rx="18" fill="#10243f"/>
+  <text x="115" y="207" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="700">Tool</text>
+  <text x="375" y="207" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="700">Crawling</text>
+  <text x="565" y="207" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="700">Reporting</text>
+  <text x="755" y="207" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="700">Scale</text>
+  <text x="925" y="207" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="700">Best Fit</text>
+  <g font-family="Arial, sans-serif" font-size="18" fill="#10243f">
+    <text x="115" y="278" font-weight="700">CrawlBeast</text>
+    <text x="115" y="342" font-weight="700">Screaming Frog</text>
+    <text x="115" y="406" font-weight="700">Sitebulb</text>
+    <text x="115" y="470" font-weight="700">Semrush</text>
+    <text x="115" y="534" font-weight="700">JetOctopus</text>
+  </g>
+  <g fill="#d9e2ef">
+    <rect x="80" y="293" width="1040" height="1"/>
+    <rect x="80" y="357" width="1040" height="1"/>
+    <rect x="80" y="421" width="1040" height="1"/>
+    <rect x="80" y="485" width="1040" height="1"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700">
+    <text x="382" y="278" fill="#06a878">Strong</text>
+    <text x="572" y="278" fill="#06a878">Strong</text>
+    <text x="762" y="278" fill="#2784d8">Agency</text>
+    <text x="925" y="278" fill="#52657a">Repeatable audits</text>
+    <text x="382" y="342" fill="#06a878">Deep</text>
+    <text x="572" y="342" fill="#d88400">Manual</text>
+    <text x="762" y="342" fill="#2784d8">Flexible</text>
+    <text x="925" y="342" fill="#52657a">Technical SEOs</text>
+    <text x="382" y="406" fill="#06a878">Strong</text>
+    <text x="572" y="406" fill="#06a878">Visual</text>
+    <text x="762" y="406" fill="#2784d8">Team</text>
+    <text x="925" y="406" fill="#52657a">Client explainers</text>
+    <text x="382" y="470" fill="#2784d8">Good</text>
+    <text x="572" y="470" fill="#06a878">Suite</text>
+    <text x="762" y="470" fill="#2784d8">Campaigns</text>
+    <text x="925" y="470" fill="#52657a">All-in-one SEO</text>
+    <text x="382" y="534" fill="#06a878">Large-site</text>
+    <text x="572" y="534" fill="#2784d8">Dashboards</text>
+    <text x="762" y="534" fill="#06a878">Advanced</text>
+    <text x="925" y="534" fill="#52657a">Enterprise SEO</text>
+  </g>
+  <text x="80" y="655" fill="#52657a" font-family="Arial, sans-serif" font-size="18">Tip: choose the tool that matches your delivery workflow, reporting needs, and client site complexity.</text>
+</svg>

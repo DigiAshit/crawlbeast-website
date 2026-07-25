@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { client } from '@/lib/sanity.client'
+import { blogPosts } from '@/data/blog-posts'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://crawlbeast.com'
@@ -9,6 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '',
     '/about',
     '/pricing',
+    '/blog',
     '/docs',
     '/download',
     '/contact',
@@ -34,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .filter((page) => {
       // Normalize and exclude duplicate mappings or covered static pages
       const cleanSlug = page.slug.startsWith('/') ? page.slug : `/${page.slug}`
-      return !['/', '/about', '/pricing', '/docs', '/download', '/contact'].includes(cleanSlug)
+      return !['/', '/about', '/pricing', '/blog', '/docs', '/download', '/contact'].includes(cleanSlug)
     })
     .map((page) => {
       const cleanSlug = page.slug.startsWith('/') ? page.slug : `/${page.slug}`
@@ -46,5 +48,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }
     })
 
-  return [...staticRoutes, ...sanityRoutes]
+  // 3. Blog articles
+  const blogRoutes = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
+
+  return [...staticRoutes, ...sanityRoutes, ...blogRoutes]
 }

@@ -28,6 +28,7 @@ const Header: React.FC<HeaderProps> = ({ siteName = "CrawlBeast", logoUrl = "/cr
   const navLinks = [
     { name: "About", path: "/about" },
     { name: "Pricing", path: "/pricing" },
+    { name: "Blog", path: "/blog" },
     { name: "Docs", path: "/docs" },
     { name: "Contact", path: "/contact" },
   ];

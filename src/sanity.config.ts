@@ -30,6 +30,7 @@ export default defineConfig({
             S.divider(),
             // Regular Pages list
             S.documentTypeListItem('page').title('Pages'),
+            S.documentTypeListItem('post').title('Blog Posts'),
             S.documentTypeListItem('lead').title('Leads'),
           ]),
     }),

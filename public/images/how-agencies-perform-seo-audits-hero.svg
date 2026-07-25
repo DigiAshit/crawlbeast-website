@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Agency SEO audit workflow dashboard</title>
+  <desc id="desc">A dashboard-style illustration showing an agency team moving through crawl, analysis, reporting, and monitoring steps for SEO audits.</desc>
+  <rect width="1200" height="630" fill="#f7f9fc"/>
+  <rect x="72" y="72" width="1056" height="486" rx="24" fill="#ffffff" stroke="#d9e2ef" stroke-width="2"/>
+  <rect x="72" y="72" width="1056" height="80" rx="24" fill="#10243f"/>
+  <text x="118" y="123" fill="#ffffff" font-family="Arial, sans-serif" font-size="30" font-weight="700">How Agencies Perform SEO Audits</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="125" y="205" width="190" height="150" rx="16" fill="#e8f4ff" stroke="#b8dfff"/>
+    <text x="161" y="260" fill="#10243f" font-size="23" font-weight="700">Scope</text>
+    <text x="151" y="295" fill="#52657a" font-size="17">Goals, domain,</text>
+    <text x="151" y="320" fill="#52657a" font-size="17">priority pages</text>
+    <rect x="375" y="205" width="190" height="150" rx="16" fill="#fff7e6" stroke="#ffe0a3"/>
+    <text x="414" y="260" fill="#10243f" font-size="23" font-weight="700">Crawl</text>
+    <text x="401" y="295" fill="#52657a" font-size="17">Collect URLs</text>
+    <text x="401" y="320" fill="#52657a" font-size="17">and signals</text>
+    <rect x="625" y="205" width="190" height="150" rx="16" fill="#fff0f0" stroke="#ffc2c2"/>
+    <text x="654" y="260" fill="#10243f" font-size="23" font-weight="700">Analyze</text>
+    <text x="651" y="295" fill="#52657a" font-size="17">Group issues</text>
+    <text x="651" y="320" fill="#52657a" font-size="17">by impact</text>
+    <rect x="875" y="205" width="190" height="150" rx="16" fill="#eefaf5" stroke="#bfead9"/>
+    <text x="912" y="260" fill="#10243f" font-size="23" font-weight="700">Report</text>
+    <text x="901" y="295" fill="#52657a" font-size="17">Explain fixes</text>
+    <text x="901" y="320" fill="#52657a" font-size="17">to clients</text>
+  </g>
+  <g stroke="#8aa0b8" stroke-width="5" stroke-linecap="round">
+    <path d="M315 280h60"/>
+    <path d="M565 280h60"/>
+    <path d="M815 280h60"/>
+  </g>
+  <g fill="#8aa0b8">
+    <path d="M374 280l-14-9v18z"/>
+    <path d="M624 280l-14-9v18z"/>
+    <path d="M874 280l-14-9v18z"/>
+  </g>
+  <rect x="170" y="420" width="860" height="72" rx="18" fill="#f2efff" stroke="#d6ccff"/>
+  <text x="217" y="465" fill="#10243f" font-family="Arial, sans-serif" font-size="22" font-weight="700">CrawlBeast helps agencies standardize technical checks across every client audit.</text>
+</svg>
