@@ -87,33 +87,33 @@ export default function FounderPopups() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="bg-[#0e1320] border border-blue-900/40 rounded-2xl p-8 max-w-md w-full relative shadow-2xl"
+              className="bg-white border border-zinc-200 rounded-2xl p-8 max-w-md w-full relative shadow-2xl text-zinc-800"
             >
               <button
                 onClick={() => setShowExitIntent(false)}
-                className="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors cursor-pointer"
+                className="absolute top-4 right-4 text-zinc-400 hover:text-zinc-800 transition-colors cursor-pointer"
                 aria-label="Close offer"
               >
                 <X className="h-4 w-4" />
               </button>
 
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-950 border border-blue-900/40 text-accent-blue mb-5">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 border border-blue-100 text-accent-blue mb-5">
                 <AlertCircle className="h-6 w-6" />
               </div>
 
-              <h2 className="text-xl font-bold text-white mb-2">
-                Wait! Don&apos;t Lose Your Founder Pricing
+              <h2 className="text-xl font-bold text-zinc-900 mb-2">
+                Wait! Don&apos;t Lose Your Founder Lifetime Pricing
               </h2>
               
-              <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-6">
+              <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed mb-6">
                 Your personalized Founding Member offer is ending soon. Secure permanent **Lifetime Access for just $29** before the timer expires.
               </p>
 
-              <div className="mb-6 p-4 rounded-xl bg-black/35 border border-white/5 text-center">
-                <p className="text-[10px] uppercase font-semibold text-zinc-500 mb-1 tracking-wider">
+              <div className="mb-6 p-4 rounded-xl bg-zinc-50 border border-zinc-100 text-center">
+                <p className="text-[10px] uppercase font-semibold text-zinc-400 mb-1 tracking-wider">
                   Offer Expires In
                 </p>
-                <p className="text-sm font-mono font-bold text-yellow-300">
+                <p className="text-sm font-mono font-bold text-accent-blue">
                   {timeLeftFormattedFull}
                 </p>
               </div>
@@ -121,7 +121,7 @@ export default function FounderPopups() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={() => setShowExitIntent(false)}
-                  className="sm:order-1 flex-1 inline-flex items-center justify-center rounded-lg bg-zinc-800 hover:bg-zinc-700 transition-colors font-semibold text-xs text-white py-3 cursor-pointer"
+                  className="sm:order-1 flex-1 inline-flex items-center justify-center rounded-lg bg-zinc-100 hover:bg-zinc-200 transition-colors font-semibold text-xs text-zinc-700 py-3 cursor-pointer border border-zinc-200"
                 >
                   Maybe Later
                 </button>
@@ -146,26 +146,26 @@ export default function FounderPopups() {
             initial={{ y: 50, opacity: 0, scale: 0.95 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 50, opacity: 0, scale: 0.95 }}
-            className="fixed bottom-6 right-6 z-40 max-w-sm w-full bg-[#0e1320] border border-blue-900/40 rounded-xl p-5 shadow-2xl hidden md:block"
+            className="fixed bottom-6 right-6 z-40 max-w-sm w-full bg-white border border-zinc-200 rounded-xl p-5 shadow-2xl hidden md:block text-zinc-800"
           >
             <button
               onClick={() => setShowScrollPopup(false)}
-              className="absolute top-3 right-3 text-zinc-500 hover:text-white transition-colors cursor-pointer"
+              className="absolute top-3 right-3 text-zinc-400 hover:text-zinc-800 transition-colors cursor-pointer"
               aria-label="Dismiss offer"
             >
               <X className="h-3.5 w-3.5" />
             </button>
 
             <div className="flex gap-3.5 items-start">
-              <div className="h-9 w-9 shrink-0 flex items-center justify-center rounded-lg bg-blue-950 border border-blue-900/40 text-accent-blue">
-                <Sparkles className="h-4 w-4 text-yellow-300 animate-pulse" />
+              <div className="h-9 w-9 shrink-0 flex items-center justify-center rounded-lg bg-blue-50 border border-blue-100 text-accent-blue">
+                <Sparkles className="h-4 w-4 text-accent-blue animate-pulse" />
               </div>
               <div className="flex-1 min-w-0 pr-4">
-                <h4 className="text-xs font-extrabold text-white mb-1">
-                  Founder Offer Ending Soon
+                <h4 className="text-xs font-extrabold text-zinc-900 mb-1">
+                  Founder Lifetime Access Ending Soon
                 </h4>
-                <p className="text-[10px] text-zinc-400 leading-relaxed mb-3">
-                  Unlock CrawlBeast forever for a one-time payment of $29. Ends in <span className="font-mono text-yellow-300 font-semibold">{timeLeftFormattedBar}</span>.
+                <p className="text-[10px] text-zinc-600 leading-relaxed mb-3">
+                  Unlock CrawlBeast forever for a one-time payment of $29. Ends in <span className="font-mono text-accent-blue font-semibold bg-blue-50 border border-blue-100 px-1 py-0.5 rounded">{timeLeftFormattedBar}</span>.
                 </p>
                 <Link
                   href="/checkout/founder"
