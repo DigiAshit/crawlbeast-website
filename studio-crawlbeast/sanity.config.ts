@@ -31,6 +31,7 @@ export default defineConfig({
             S.documentTypeListItem('page').title('Pages'),
             S.documentTypeListItem('post').title('Blog Posts'),
             S.documentTypeListItem('lead').title('Leads'),
+            S.documentTypeListItem('contact').title('Contact Form Submissions'),
           ]),
     }),
     visionTool(),

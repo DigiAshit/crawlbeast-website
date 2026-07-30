@@ -21,21 +21,42 @@ export default function StaticContact() {
     message: ""
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-    // Simulate submission
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        message: ""
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-    }, 1500);
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatus("success");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: ""
+        });
+      } else {
+        setStatus("idle");
+        setErrorMessage(data.error || "Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      setStatus("idle");
+      setErrorMessage("Network error. Please check your connection and try again.");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -202,6 +223,12 @@ export default function StaticContact() {
                       className="rounded-lg bg-zinc-950/80 border border-zinc-900 px-4 py-2.5 text-xs text-white placeholder-zinc-700 focus:outline-none focus:ring-1 focus:ring-accent-blue focus:border-accent-blue disabled:opacity-50 resize-none"
                     />
                   </div>
+
+                  {errorMessage && (
+                    <div className="text-red-500 text-xs font-semibold bg-red-950/20 border border-red-900/30 rounded-lg p-3 text-center mt-2">
+                      {errorMessage}
+                    </div>
+                  )}
 
                   <button
                     type="submit"

@@ -11,6 +11,7 @@ import page from './page'
 import settings from './settings'
 import lead from './leads'
 import post from './post'
+import contact from './contact'
 
 export const schemaTypes = [
   seoSettings,
@@ -26,4 +27,5 @@ export const schemaTypes = [
   settings,
   lead,
   post,
+  contact,
 ]
