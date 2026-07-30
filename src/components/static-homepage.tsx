@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import { usePopup } from "./PopupContext";
 import CrawlSimulation from "./CrawlSimulation";
+import { useFounderCampaign } from "./FounderCampaignContext";
 import { 
   ArrowUpRight, Star, ArrowRight, Check,
   Clock, Zap, Sparkles, Plus, Cpu, Globe
@@ -18,6 +20,7 @@ const fadeInUp = {
 
 const StaticHomepage: React.FC = () => {
   const { openPopup } = usePopup();
+  const { isCampaignActive, timeLeftFormattedBar } = useFounderCampaign();
 
   // State controls
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -169,6 +172,17 @@ const StaticHomepage: React.FC = () => {
       {/* Hero Section */}
       <motion.section {...fadeInUp} className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-grid-pattern">
         <div className="max-w-7xl mx-auto px-6 text-center flex flex-col items-center">
+          {isCampaignActive && (
+            <Link
+              href="/checkout/founder"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#0676FE]/10 border border-[#0676FE]/30 hover:bg-[#0676FE]/20 transition-all text-white mb-6 backdrop-blur-sm group cursor-pointer"
+            >
+              <span className="flex h-2 w-2 rounded-full bg-accent-blue animate-pulse" />
+              🚀 <span className="font-semibold text-accent-blue">Founder Offer Active:</span> Get Lifetime Access for just $29 (Save 85%)
+              <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          )}
+
           {/* Badge */}
           <div className="inline-flex flex-wrap items-center justify-center gap-3 mb-6">
             <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 border border-primary/20 text-secondary">
@@ -886,6 +900,43 @@ Get started free forever. Crawl 1,000 URLs & manage 5 projects with no credit ca
               Simple, transparent pricing. Start free, upgrade when you need more power.
             </p>
           </div>
+
+          {isCampaignActive && (
+            <div className="max-w-4xl mx-auto mb-12 p-8 rounded-2xl border border-blue-900/40 bg-[#0c1322] relative overflow-hidden shadow-xl text-left flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="absolute top-0 left-0 bottom-0 w-[4px] bg-gradient-to-b from-[#0676FE] to-indigo-600" />
+              <div>
+                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-[#0676FE]/15 border border-[#0676FE]/30 text-accent-blue font-bold text-[10px] uppercase tracking-wider mb-3">
+                  🚀 Founder Launch Offer
+                </span>
+                <h3 className="text-xl font-bold text-white mb-2">Become a CrawlBeast Founder Today</h3>
+                <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-xl">
+                  Unlock unlimited projects, unlimited crawls, and every future update with a one-time purchase. No monthly subscription. Pay once, use forever.
+                </p>
+                <div className="flex items-center gap-4 mt-4">
+                  <div className="text-xs text-zinc-400">
+                    Offer expires in:{" "}
+                    <span className="font-mono text-yellow-300 font-bold bg-black/35 px-2 py-0.5 rounded text-[11px]">
+                      {timeLeftFormattedBar}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col items-start md:items-end gap-3 shrink-0">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-xs text-zinc-500 line-through font-semibold">$199</span>
+                  <span className="text-3xl font-extrabold text-white">$29</span>
+                  <span className="text-[10px] text-zinc-400 font-medium">One-Time</span>
+                </div>
+                <Link
+                  href="/checkout/founder"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent-blue hover:bg-blue-600 transition-colors font-bold text-xs text-white px-5 py-3 shadow-lg shadow-accent-blue/15 cursor-pointer"
+                >
+                  Claim Founder Access
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </div>
+          )}
 
           {/* Toggle billing option */}
           <div className="flex items-center justify-center gap-4 mb-16">

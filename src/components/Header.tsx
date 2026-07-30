@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { usePopup } from "./PopupContext";
+import { useFounderCampaign } from "./FounderCampaignContext";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -16,6 +17,7 @@ const Header: React.FC<HeaderProps> = ({ siteName = "CrawlBeast", logoUrl = "/cr
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const { openPopup } = usePopup();
+  const { isCampaignActive } = useFounderCampaign();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +38,9 @@ const Header: React.FC<HeaderProps> = ({ siteName = "CrawlBeast", logoUrl = "/cr
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
+          isCampaignActive ? "top-10" : "top-0"
+        } ${
           scrolled
             ? "bg-[#07090e]/80 border-b border-white/5 backdrop-blur-md py-4"
             : "bg-transparent py-6"

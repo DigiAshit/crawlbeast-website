@@ -12,6 +12,7 @@ import settings from './settings'
 import lead from './leads'
 import post from './post'
 import contact from './contact'
+import founderCheckout from './founderCheckout'
 
 export const schemaTypes = [
   seoSettings,
@@ -28,4 +29,5 @@ export const schemaTypes = [
   lead,
   post,
   contact,
+  founderCheckout,
 ]

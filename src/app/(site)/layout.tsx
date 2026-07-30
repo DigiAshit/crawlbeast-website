@@ -7,6 +7,10 @@ import Footer from "@/components/Footer";
 import { client, urlFor } from "@/lib/sanity.client";
 import { settingsQuery } from "@/lib/sanity.queries";
 import Script from "next/script";
+import { FounderCampaignProvider } from "@/components/FounderCampaignContext";
+import StickyAnnouncementBar from "@/components/StickyAnnouncementBar";
+import MainLayoutWrapper from "@/components/MainLayoutWrapper";
+import FounderPopups from "@/components/FounderPopups";
 import "../globals.css";
 
 // Revalidate all pages using this layout every 60 seconds
@@ -128,26 +132,34 @@ export default async function RootLayout({
         )}
       </head>
       <body className="min-h-full flex flex-col bg-[#07090E] text-[#F8FAFC]">
-        <PopupProvider>
-          {/* Download Dialog Modal */}
-          <PopupDialog />
+        <FounderCampaignProvider>
+          <PopupProvider>
+            {/* Sticky Announcement Bar */}
+            <StickyAnnouncementBar />
 
-          {/* Sticky Header */}
-          <Header siteName={settings?.siteName} logoUrl={companyLogoUrl} />
-          
-          {/* Main App Page content */}
-          <div className="flex flex-col flex-1 pt-[80px]">
-            {children}
-          </div>
-          
-          {/* General Footer */}
-          <Footer 
-            siteName={settings?.siteName} 
-            companyName={settings?.companyName} 
-            supportEmail={settings?.supportEmail}
-            socialProfiles={settings?.socialProfiles}
-          />
-        </PopupProvider>
+            {/* Download Dialog Modal */}
+            <PopupDialog />
+
+            {/* Sticky Header */}
+            <Header siteName={settings?.siteName} logoUrl={companyLogoUrl} />
+            
+            {/* Main App Page content */}
+            <MainLayoutWrapper>
+              {children}
+            </MainLayoutWrapper>
+            
+            {/* Coordinated Campaign Popups & Floating Button */}
+            <FounderPopups />
+
+            {/* General Footer */}
+            <Footer 
+              siteName={settings?.siteName} 
+              companyName={settings?.companyName} 
+              supportEmail={settings?.supportEmail}
+              socialProfiles={settings?.socialProfiles}
+            />
+          </PopupProvider>
+        </FounderCampaignProvider>
       </body>
     </html>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { 
   Monitor, Cpu, ChevronDown, Check, 
   ShieldCheck, History, ArrowDownToLine, Sparkles
@@ -75,6 +75,12 @@ export default function StaticDownload() {
   const [downloading, setDownloading] = useState<"windows" | "mac" | null>(null);
   const [success, setSuccess] = useState<"windows" | "mac" | null>(null);
   const [activeLog, setActiveLog] = useState<number | null>(0);
+  const [isPaidUser, setIsPaidUser] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  useEffect(() => {
+    setIsPaidUser(localStorage.getItem("crawlbeast_payment_success") === "true");
+  }, []);
 
   const handleDownload = (platform: "windows" | "mac") => {
     setDownloading(platform);
@@ -104,15 +110,27 @@ export default function StaticDownload() {
       {/* Hero Content */}
       <div className="relative max-w-4xl mx-auto text-center mt-12 mb-16">
         {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4 }}
-          className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950 px-4 py-1.5 text-xs text-zinc-400 mb-8"
-        >
-          <Sparkles className="h-3.5 w-3.5 text-accent-blue" />
-          <span>Unlock Smarter SEO</span>
-        </motion.div>
+        {isPaidUser ? (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4 }}
+            className="inline-flex items-center gap-2 rounded-full border border-emerald-800 bg-emerald-950/40 px-4 py-1.5 text-xs text-emerald-400 mb-8"
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>Welcome to CrawlBeast Founder Edition!</span>
+          </motion.div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4 }}
+            className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950 px-4 py-1.5 text-xs text-zinc-400 mb-8"
+          >
+            <Sparkles className="h-3.5 w-3.5 text-accent-blue" />
+            <span>Unlock Smarter SEO</span>
+          </motion.div>
+        )}
 
         {/* Title */}
         <motion.h1 
@@ -121,7 +139,7 @@ export default function StaticDownload() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-4"
         >
-          Download CrawlBeast
+          {isPaidUser ? "Thank You for Becoming a Founder!" : "Download CrawlBeast"}
         </motion.h1>
 
         {/* Heading 2 */}
@@ -131,17 +149,18 @@ export default function StaticDownload() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-2xl sm:text-3xl font-bold text-accent-blue mb-6"
         >
-          Your website audit is ready to get smarter.
+          {isPaidUser ? "You're officially a Founding Member." : "Your website audit is ready to get smarter."}
         </motion.h2>
 
-        {/* Paragraph */}
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-sm sm:text-base text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-12"
         >
-          Download CrawlBeast and start finding the SEO issues that actually impact rankings.
+          {isPaidUser 
+            ? "Download the desktop app below. You will receive an email shortly containing your unique activation license key to unlock your Founder Lifetime benefits."
+            : "Download CrawlBeast and start finding the SEO issues that actually impact rankings."}
         </motion.p>
 
         {/* Two CTAs */}
@@ -210,6 +229,26 @@ export default function StaticDownload() {
             <span>Secure download. Code signed & verified.</span>
           </div>
         </motion.div>
+
+        {isPaidUser && (
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-xl mx-auto mt-8 p-6 rounded-2xl border border-emerald-900/40 bg-emerald-950/10 text-left"
+          >
+            <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-3">
+              ✓ Your Founder Benefits Unlocked:
+            </h4>
+            <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-xs text-zinc-300 font-medium">
+              <div className="flex items-center gap-2">✓ Lifetime Access</div>
+              <div className="flex items-center gap-2">✓ Unlimited Projects</div>
+              <div className="flex items-center gap-2">✓ Unlimited Crawls</div>
+              <div className="flex items-center gap-2">✓ Unlimited Reports</div>
+              <div className="flex items-center gap-2">✓ Future Updates Included</div>
+              <div className="flex items-center gap-2">✓ Priority Support</div>
+            </div>
+          </motion.div>
+        )}
       </div>
 
       {/* Installation guides */}
@@ -295,6 +334,69 @@ export default function StaticDownload() {
                             <li key={cIdx} className="leading-relaxed">{change}</li>
                           ))}
                         </ul>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+      </motion.section>
+
+      {/* FAQ Section */}
+      <motion.section {...fadeInUp} className="relative max-w-3xl mx-auto border-t border-zinc-900 pt-16 mt-16">
+        <h2 className="text-xl font-bold text-white text-center mb-10">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="flex flex-col gap-4">
+          {[
+            {
+              q: "Why is Founder Access only $29?",
+              a: "We are currently in a launch phase and want to grow our early user base. Early feedback helps us make CrawlBeast the best desktop crawler in the industry, and we reward our early adopters with unbeatable founding pricing."
+            },
+            {
+              q: "Is this really lifetime?",
+              a: "Yes, absolutely. Once you buy, you never pay again. No monthly or yearly subscription fees will ever be charged to your card."
+            },
+            {
+              q: "Will I receive future updates?",
+              a: "Yes. All future versions, core engine improvements, and feature updates are fully included with your license."
+            },
+            {
+              q: "What happens after my countdown expires?",
+              a: "Your personalized countdown limits the timeframe to purchase the $29 Founder Access. Once purchased, your access is permanent and never expires."
+            },
+            {
+              q: "Can I use CrawlBeast on multiple computers?",
+              a: "Your license key supports activation on your primary systems. For multi-device agency setups, please contact our support team."
+            }
+          ].map((item, idx) => {
+            const isOpen = openFaq === idx;
+            return (
+              <div 
+                key={idx}
+                className="border border-zinc-900 rounded-lg bg-zinc-950/30 overflow-hidden"
+              >
+                <button
+                  onClick={() => setOpenFaq(isOpen ? null : idx)}
+                  className="w-full flex items-center justify-between p-5 text-left cursor-pointer"
+                >
+                  <span className="text-xs sm:text-sm font-bold text-white">{item.q}</span>
+                  <ChevronDown className={`h-4 w-4 text-zinc-500 transition-transform shrink-0 ml-2 ${isOpen ? "rotate-180" : ""}`} />
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0 }}
+                      animate={{ height: "auto" }}
+                      exit={{ height: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-5 border-t border-zinc-900 text-xs text-zinc-400 leading-relaxed">
+                        {item.a}
                       </div>
                     </motion.div>
                   )}

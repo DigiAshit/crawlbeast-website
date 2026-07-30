@@ -8,8 +8,22 @@ export default function GatedDownload({ children }: { children: React.ReactNode 
 
   useEffect(() => {
     const checkIsUnlocked = () => {
-      // 1. Check URL parameters (redirected from lead capture)
       const params = new URLSearchParams(window.location.search);
+      
+      // 1. Check paid checkout URL parameters (redirected from PayPal success)
+      const paymentStatus = params.get("payment_status");
+      const paymentQuery = params.get("payment");
+      if (paymentStatus === "success" || paymentQuery === "success") {
+        localStorage.setItem("crawlbeast_payment_success", "true");
+        return true;
+      }
+
+      // 2. Check paid checkout localStorage
+      if (localStorage.getItem("crawlbeast_payment_success") === "true") {
+        return true;
+      }
+
+      // 3. Check free checkout URL parameters (redirected from lead capture)
       if (params.get("email") && params.get("name")) {
         const unlockData = {
           unlocked: true,
@@ -19,7 +33,7 @@ export default function GatedDownload({ children }: { children: React.ReactNode 
         return true;
       }
 
-      // 2. Check localStorage
+      // 4. Check free checkout localStorage
       const stored = localStorage.getItem("crawlbeast_download_unlocked");
       if (!stored) return false;
 
@@ -49,7 +63,8 @@ export default function GatedDownload({ children }: { children: React.ReactNode 
   useEffect(() => {
     if (isUnlocked === false && !isOpen) {
       const stored = localStorage.getItem("crawlbeast_download_unlocked");
-      if (stored) {
+      const isPaid = localStorage.getItem("crawlbeast_payment_success") === "true";
+      if (stored || isPaid) {
         setIsUnlocked(true);
       } else {
         // If they bypassed it somehow, reopen it
