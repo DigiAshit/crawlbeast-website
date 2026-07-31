@@ -145,9 +145,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Extract Table of Contents items (H2s)
   let tocItems: { id: string; text: string }[] = [];
   if (typeof post.content === 'string') {
-    tocItems = Array.from(post.content.matchAll(/<h2 id="(.*?)" className=".*?">(.*?)<\/h2>/g)).map((m: any) => ({
+    tocItems = Array.from(post.content.matchAll(/<h2 id="([^"]+)"[^>]*>(.*?)<\/h2>/g)).map((m: any) => ({
       id: m[1],
-      text: m[2]
+      text: m[2].replace(/<[^>]*>/g, '')
     }));
   } else if (Array.isArray(post.content)) {
     post.content.forEach((block: any) => {
@@ -208,7 +208,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Main Content Area (White Background, 3-Column Grid) */}
       <main className="bg-white text-zinc-800 py-16 px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Left Column: Table of Contents */}
             <aside className="lg:col-span-3 lg:max-w-[220px]">
@@ -216,7 +216,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </aside>
 
             {/* Center Column: Article content */}
-            <article className="lg:col-span-6 max-w-[740px] mx-auto w-full">
+            <article className="lg:col-span-7 max-w-[860px] mx-auto w-full">
               {/* Featured Image (One Prominent Copy at Top of Body) */}
               <div className="relative aspect-video rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-50/50 p-6 mb-10 w-full">
                 <img 
@@ -240,7 +240,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </article>
 
             {/* Right Column: Sticky Sidebar Widgets */}
-            <aside className="lg:col-span-3 lg:max-w-[280px]">
+            <aside className="lg:col-span-2 lg:max-w-[280px]">
               <BlogSidebar />
             </aside>
           </div>
