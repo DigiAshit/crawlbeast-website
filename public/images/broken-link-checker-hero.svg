@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Broken link checker</title>
+  <desc id="desc">A source page links to a failed URL and a repair workflow traces the source.</desc>
+  <rect width="1200" height="630" fill="#f7f9fc"/>
+  <text x="70" y="86" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#172a3a">FIND THE FAILURE. TRACE THE SOURCE. CHOOSE THE FIX.</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="70" y="145" width="300" height="310" rx="8" fill="#ffffff" stroke="#aab8c8" stroke-width="2"/>
+    <rect x="70" y="145" width="300" height="58" rx="8" fill="#174a7e"/><text x="96" y="182" font-size="19" font-weight="700" fill="#ffffff">SOURCE PAGE</text>
+    <rect x="100" y="235" width="240" height="22" rx="3" fill="#d9e3ed"/><rect x="100" y="274" width="200" height="16" rx="3" fill="#e7edf3"/><rect x="100" y="306" width="220" height="16" rx="3" fill="#e7edf3"/>
+    <rect x="100" y="354" width="188" height="46" rx="5" fill="#dcecff" stroke="#6d9ed4"/><text x="121" y="383" font-size="16" font-weight="700" fill="#174a7e">VIEW PRODUCT</text>
+    <path d="M370 300h150" stroke="#4e6a82" stroke-width="8"/><path d="m505 282 25 18-25 18" fill="none" stroke="#4e6a82" stroke-width="8"/>
+    <circle cx="656" cy="300" r="102" fill="#fff0ed" stroke="#e35d4f" stroke-width="5"/><text x="656" y="285" text-anchor="middle" font-size="62" font-weight="700" fill="#c03a2b">404</text><text x="656" y="329" text-anchor="middle" font-size="18" font-weight="700" fill="#7a2c24">DESTINATION FAILED</text>
+    <path d="M760 300h92" stroke="#4e6a82" stroke-width="8"/><path d="m837 282 25 18-25 18" fill="none" stroke="#4e6a82" stroke-width="8"/>
+    <rect x="872" y="170" width="258" height="260" rx="8" fill="#172a3a"/>
+    <text x="902" y="213" font-size="18" font-weight="700" fill="#9fc5ef">REPAIR OPTIONS</text>
+    <g font-size="17" fill="#ffffff"><text x="902" y="258">✓ Update direct link</text><text x="902" y="298">✓ Restore useful page</text><text x="902" y="338">✓ Redirect to equivalent</text><text x="902" y="378">✓ Remove stale promise</text></g>
+  </g>
+  <rect x="70" y="505" width="1060" height="70" rx="6" fill="#e4f6ed" stroke="#5eae83"/>
+  <text x="600" y="548" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#176b4b">A status code is evidence. Context determines the correct repair.</text>
+</svg>

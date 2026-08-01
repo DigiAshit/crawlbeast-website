@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Core Web Vitals benchmark thresholds</title>
+  <desc id="desc">Benchmark bands for Largest Contentful Paint, Interaction to Next Paint, and Cumulative Layout Shift, showing good, needs improvement, and poor thresholds.</desc>
+  <rect width="1200" height="620" fill="#f7f8fa"/>
+  <text x="70" y="75" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#17212b">Core Web Vitals benchmark thresholds</text>
+  <text x="70" y="112" font-family="Arial, sans-serif" font-size="17" fill="#53616f">Google benchmarks used as a diagnostic reference, not a guaranteed ranking outcome</text>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#17212b">
+    <text x="70" y="175">Largest Contentful Paint</text>
+    <text x="70" y="300">Interaction to Next Paint</text>
+    <text x="70" y="425">Cumulative Layout Shift</text>
+  </g>
+  <g>
+    <rect x="340" y="145" width="260" height="42" fill="#2e9d68"/><rect x="600" y="145" width="235" height="42" fill="#e4ae32"/><rect x="835" y="145" width="250" height="42" fill="#d85b58"/>
+    <rect x="340" y="270" width="260" height="42" fill="#2e9d68"/><rect x="600" y="270" width="235" height="42" fill="#e4ae32"/><rect x="835" y="270" width="250" height="42" fill="#d85b58"/>
+    <rect x="340" y="395" width="260" height="42" fill="#2e9d68"/><rect x="600" y="395" width="235" height="42" fill="#e4ae32"/><rect x="835" y="395" width="250" height="42" fill="#d85b58"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="16" fill="#17212b">
+    <text x="365" y="172">Good: ≤ 2.5s</text><text x="625" y="172">Needs improvement: 2.5–4s</text><text x="860" y="172">Poor: &gt; 4s</text>
+    <text x="365" y="297">Good: ≤ 200ms</text><text x="625" y="297">Needs improvement: 200–500ms</text><text x="860" y="297">Poor: &gt; 500ms</text>
+    <text x="365" y="422">Good: ≤ 0.1</text><text x="625" y="422">Needs improvement: 0.1–0.25</text><text x="860" y="422">Poor: &gt; 0.25</text>
+  </g>
+  <text x="70" y="530" font-family="Arial, sans-serif" font-size="15" fill="#53616f">Source: Google / web.dev Core Web Vitals documentation. Verify current guidance before publication.</text>
+  <text x="70" y="560" font-family="Arial, sans-serif" font-size="15" fill="#53616f">Interpret thresholds with field data, page type, device mix, and business impact.</text>
+</svg>

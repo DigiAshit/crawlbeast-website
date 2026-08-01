@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Required broken-link checker data</title>
+  <desc id="desc">A useful repair record includes source, destination, response, context, priority, and verification.</desc>
+  <rect width="1200" height="700" fill="#f7f9fc"/>
+  <text x="64" y="70" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#172a3a">A repairable broken-link record</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="64" y="112" width="1072" height="90" rx="7" fill="#172a3a"/><text x="94" y="150" font-size="16" font-weight="700" fill="#9fc5ef">DESTINATION</text><text x="94" y="180" font-size="20" fill="#ffffff">/old-product/  →  404 Not Found  •  checked 2026-08-01</text>
+    <rect x="64" y="228" width="510" height="170" rx="7" fill="#dcecff" stroke="#6d9ed4"/><text x="94" y="270" font-size="20" font-weight="700" fill="#174a7e">WHERE DID THE LINK COME FROM?</text><text x="94" y="308" font-size="17" fill="#31465a">Source URL and template</text><text x="94" y="340" font-size="17" fill="#31465a">Anchor text or image alt</text><text x="94" y="372" font-size="17" fill="#31465a">Number and value of inlinks</text>
+    <rect x="626" y="228" width="510" height="170" rx="7" fill="#fff0dc" stroke="#dda158"/><text x="656" y="270" font-size="20" font-weight="700" fill="#8a4b00">WHAT ACTUALLY FAILED?</text><text x="656" y="308" font-size="17" fill="#31465a">Final URL after redirects</text><text x="656" y="340" font-size="17" fill="#31465a">HTTP, DNS, TLS, timeout, fragment</text><text x="656" y="372" font-size="17" fill="#31465a">Internal, external, asset, or embed</text>
+    <rect x="64" y="424" width="510" height="170" rx="7" fill="#e4f6ed" stroke="#5eae83"/><text x="94" y="466" font-size="20" font-weight="700" fill="#176b4b">WHAT SHOULD HAPPEN?</text><text x="94" y="504" font-size="17" fill="#31465a">Update, restore, redirect, remove</text><text x="94" y="536" font-size="17" fill="#31465a">Priority, owner, due date</text><text x="94" y="568" font-size="17" fill="#31465a">Relevant replacement destination</text>
+    <rect x="626" y="424" width="510" height="170" rx="7" fill="#f0eafb" stroke="#9274c4"/><text x="656" y="466" font-size="20" font-weight="700" fill="#55348d">HOW WILL WE PROVE IT?</text><text x="656" y="504" font-size="17" fill="#31465a">Acceptance criteria</text><text x="656" y="536" font-size="17" fill="#31465a">Browser sample and re-crawl</text><text x="656" y="568" font-size="17" fill="#31465a">Release and validation date</text>
+  </g>
+  <text x="600" y="650" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172a3a">Without the source page, a broken destination is only half a finding.</text>
+</svg>

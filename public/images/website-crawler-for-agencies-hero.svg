@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Website crawler for agencies</title>
+  <desc id="desc">An agency workspace connects several client websites to one prioritized crawl review.</desc>
+  <rect width="1200" height="630" fill="#f7f9fc"/>
+  <rect x="64" y="58" width="1072" height="514" rx="8" fill="#ffffff" stroke="#ccd5e1" stroke-width="2"/>
+  <rect x="64" y="58" width="1072" height="64" rx="8" fill="#172a3a"/>
+  <circle cx="101" cy="90" r="8" fill="#ff6b5e"/><circle cx="129" cy="90" r="8" fill="#f7c948"/><circle cx="157" cy="90" r="8" fill="#3ecf8e"/>
+  <text x="196" y="98" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">AGENCY CRAWL CONTROL</text>
+  <rect x="92" y="150" width="250" height="388" rx="6" fill="#eef3f8"/>
+  <text x="118" y="190" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#172a3a">CLIENT PROJECTS</text>
+  <g font-family="Arial, sans-serif" font-size="16" fill="#31465a">
+    <rect x="112" y="216" width="210" height="64" rx="6" fill="#ffffff" stroke="#aab8c8"/><circle cx="137" cy="248" r="9" fill="#3b82f6"/><text x="158" y="254">Retail catalog</text>
+    <rect x="112" y="296" width="210" height="64" rx="6" fill="#ffffff" stroke="#aab8c8"/><circle cx="137" cy="328" r="9" fill="#16a085"/><text x="158" y="334">SaaS website</text>
+    <rect x="112" y="376" width="210" height="64" rx="6" fill="#ffffff" stroke="#aab8c8"/><circle cx="137" cy="408" r="9" fill="#f59e0b"/><text x="158" y="414">Local portfolio</text>
+  </g>
+  <text x="390" y="176" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#172a3a">FROM CRAWL DATA TO CLIENT ACTION</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="390" y="204" width="210" height="112" rx="6" fill="#e9f2ff" stroke="#7aa7df"/><text x="414" y="242" font-size="18" font-weight="700" fill="#174a7e">COLLECT</text><text x="414" y="272" font-size="15" fill="#31465a">URLs, links, status,</text><text x="414" y="294" font-size="15" fill="#31465a">directives, templates</text>
+    <path d="M612 260h52" stroke="#6b7f93" stroke-width="4"/><path d="m654 250 12 10-12 10" fill="none" stroke="#6b7f93" stroke-width="4"/>
+    <rect x="678" y="204" width="210" height="112" rx="6" fill="#edf9f3" stroke="#63b88d"/><text x="702" y="242" font-size="18" font-weight="700" fill="#176b4b">DIAGNOSE</text><text x="702" y="272" font-size="15" fill="#31465a">Validate patterns and</text><text x="702" y="294" font-size="15" fill="#31465a">remove false positives</text>
+    <path d="M900 260h52" stroke="#6b7f93" stroke-width="4"/><path d="m942 250 12 10-12 10" fill="none" stroke="#6b7f93" stroke-width="4"/>
+    <rect x="966" y="204" width="142" height="112" rx="6" fill="#fff3e4" stroke="#e5a24b"/><text x="989" y="242" font-size="18" font-weight="700" fill="#8a4b00">ACT</text><text x="989" y="272" font-size="15" fill="#31465a">Prioritize</text><text x="989" y="294" font-size="15" fill="#31465a">and assign</text>
+  </g>
+  <rect x="390" y="350" width="718" height="156" rx="6" fill="#172a3a"/>
+  <text x="420" y="390" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#9fc5ef">AGENCY STANDARD</text>
+  <text x="420" y="430" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#ffffff">REPRODUCIBLE SETTINGS</text>
+  <text x="420" y="467" font-family="Arial, sans-serif" font-size="20" fill="#dbe7f1">Evidence • Priority • Owner • Acceptance criteria • Re-crawl</text>
+</svg>

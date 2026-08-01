@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Agency crawl-to-action workflow</title>
+  <desc id="desc">Nine stages move a client crawl from scope through validation.</desc>
+  <rect width="1200" height="640" fill="#f7f9fc"/>
+  <text x="60" y="70" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#172a3a">The agency crawl-to-action loop</text>
+  <g font-family="Arial, sans-serif" font-size="17" text-anchor="middle">
+    <g fill="#dcecff" stroke="#6d9ed4" stroke-width="2"><rect x="55" y="125" width="200" height="95" rx="7"/><rect x="285" y="125" width="200" height="95" rx="7"/><rect x="515" y="125" width="200" height="95" rx="7"/></g>
+    <g fill="#e4f6ed" stroke="#5eae83" stroke-width="2"><rect x="745" y="125" width="200" height="95" rx="7"/><rect x="975" y="125" width="170" height="95" rx="7"/></g>
+    <g fill="#fff0dc" stroke="#dda158" stroke-width="2"><rect x="860" y="345" width="220" height="95" rx="7"/><rect x="610" y="345" width="220" height="95" rx="7"/></g>
+    <g fill="#f0eafb" stroke="#9274c4" stroke-width="2"><rect x="360" y="345" width="220" height="95" rx="7"/><rect x="110" y="345" width="220" height="95" rx="7"/></g>
+    <g fill="#172a3a" font-weight="700"><text x="155" y="164">1. SCOPE</text><text x="385" y="164">2. CONFIGURE</text><text x="615" y="164">3. CRAWL</text><text x="845" y="164">4. VALIDATE DATA</text><text x="1060" y="164">5. SEGMENT</text><text x="970" y="384">6. CONFIRM</text><text x="720" y="384">7. PRIORITIZE</text><text x="470" y="384">8. HAND OFF</text><text x="220" y="384">9. RE-CRAWL</text></g>
+    <g fill="#31465a" font-size="14"><text x="155" y="194">Purpose and boundary</text><text x="385" y="194">Save reproducible rules</text><text x="615" y="194">Observe traps and load</text><text x="845" y="194">Compare evidence sources</text><text x="1060" y="194">Find patterns</text><text x="970" y="414">Inspect examples</text><text x="720" y="414">Impact and confidence</text><text x="470" y="414">Owner and criteria</text><text x="220" y="414">Prove the result</text></g>
+  </g>
+  <path d="M255 173h28M485 173h28M715 173h28M945 173h28M1060 222v88h-90v33M858 393h-26M608 393h-26M358 393h-26M110 393H75V173h-18" fill="none" stroke="#6b7f93" stroke-width="4"/>
+  <text x="600" y="540" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#172a3a">The re-crawl becomes the next baseline.</text>
+  <text x="600" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#51677b">Keep the configuration, evidence, decision, owner, and validation result together.</text>
+</svg>

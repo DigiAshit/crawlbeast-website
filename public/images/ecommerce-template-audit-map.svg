@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Ecommerce template audit map</title>
+  <desc id="desc">A matrix maps ecommerce templates to states and audit risks.</desc>
+  <rect width="1200" height="760" fill="#f7f9fc"/>
+  <text x="60" y="62" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#172a3a">Audit templates across real catalog states</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="60" y="100" width="1080" height="84" rx="7" fill="#172a3a"/>
+    <text x="92" y="137" font-size="16" font-weight="700" fill="#9fc5ef">TEMPLATE INVENTORY</text><text x="92" y="166" font-size="20" fill="#ffffff">Homepage • Category • Brand • Product • Facet • Search • Pagination • Guide</text>
+    <text x="60" y="230" font-size="19" font-weight="700" fill="#172a3a">SAMPLE EACH TEMPLATE ACROSS THESE STATES</text>
+    <g text-anchor="middle">
+      <rect x="60" y="258" width="250" height="120" rx="7" fill="#dcecff" stroke="#6d9ed4"/><text x="185" y="300" font-size="18" font-weight="700" fill="#174a7e">AVAILABILITY</text><text x="185" y="333" font-size="16" fill="#31465a">In stock • Temporary</text><text x="185" y="358" font-size="16" fill="#31465a">Discontinued • Empty</text>
+      <rect x="337" y="258" width="250" height="120" rx="7" fill="#e4f6ed" stroke="#5eae83"/><text x="462" y="300" font-size="18" font-weight="700" fill="#176b4b">DISCOVERY</text><text x="462" y="333" font-size="16" fill="#31465a">Linked • Deep • Orphan</text><text x="462" y="358" font-size="16" fill="#31465a">Sitemap-only</text>
+      <rect x="614" y="258" width="250" height="120" rx="7" fill="#fff0dc" stroke="#dda158"/><text x="739" y="300" font-size="18" font-weight="700" fill="#8a4b00">VARIATION</text><text x="739" y="333" font-size="16" fill="#31465a">Variant • Facet • Sort</text><text x="739" y="358" font-size="16" fill="#31465a">Pagination • Search</text>
+      <rect x="891" y="258" width="249" height="120" rx="7" fill="#f0eafb" stroke="#9274c4"/><text x="1015" y="300" font-size="18" font-weight="700" fill="#55348d">MARKET</text><text x="1015" y="333" font-size="16" fill="#31465a">Country • Language</text><text x="1015" y="358" font-size="16" fill="#31465a">Currency • Catalog</text>
+    </g>
+    <text x="60" y="430" font-size="19" font-weight="700" fill="#172a3a">THEN TEST THE SYSTEMS THAT GOVERN THE STATE</text>
+    <g font-size="17" fill="#31465a">
+      <rect x="60" y="458" width="1080" height="190" rx="7" fill="#ffffff" stroke="#aab8c8"/>
+      <text x="92" y="500" font-weight="700" fill="#174a7e">ACCESS</text><text x="270" y="500">Status • robots • render • links • sitemaps</text>
+      <text x="92" y="540" font-weight="700" fill="#176b4b">IDENTITY</text><text x="270" y="540">Canonical • hreflang • URL rules • variants</text>
+      <text x="92" y="580" font-weight="700" fill="#8a4b00">MEANING</text><text x="270" y="580">Intent • content • product data • structured data</text>
+      <text x="92" y="620" font-weight="700" fill="#55348d">VALUE</text><text x="270" y="620">Demand • traffic • revenue • margin • seasonality</text>
+    </g>
+    <rect x="60" y="675" width="1080" height="48" rx="5" fill="#172a3a"/>
+    <text x="600" y="706" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">One URL sample cannot represent an ecommerce template.</text>
+  </g>
+</svg>

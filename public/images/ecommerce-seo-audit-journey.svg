@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Ecommerce SEO audit journey</title>
+  <desc id="desc">Seven audit phases connect commercial scope to production validation.</desc>
+  <rect width="1200" height="680" fill="#f7f9fc"/>
+  <text x="60" y="68" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#172a3a">From unclear performance to a validated roadmap</text>
+  <path d="M125 180h950" stroke="#aab8c8" stroke-width="6"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g fill="#174a7e"><circle cx="125" cy="180" r="34"/><circle cx="283" cy="180" r="34"/></g>
+    <g fill="#176b4b"><circle cx="441" cy="180" r="34"/><circle cx="599" cy="180" r="34"/></g>
+    <g fill="#8a4b00"><circle cx="757" cy="180" r="34"/><circle cx="915" cy="180" r="34"/></g>
+    <circle cx="1073" cy="180" r="34" fill="#55348d"/>
+    <g font-size="20" font-weight="700" fill="#ffffff"><text x="125" y="187">1</text><text x="283" y="187">2</text><text x="441" y="187">3</text><text x="599" y="187">4</text><text x="757" y="187">5</text><text x="915" y="187">6</text><text x="1073" y="187">7</text></g>
+    <g font-size="18" font-weight="700" fill="#172a3a"><text x="125" y="245">SCOPE</text><text x="283" y="245">BASELINE</text><text x="441" y="245">TEMPLATES</text><text x="599" y="245">CRAWL</text><text x="757" y="245">DIAGNOSE</text><text x="915" y="245">PRIORITIZE</text><text x="1073" y="245">VALIDATE</text></g>
+    <g font-size="15" fill="#51677b"><text x="125" y="278">Products, markets,</text><text x="125" y="299">revenue, trigger</text><text x="283" y="278">Search, analytics,</text><text x="283" y="299">inventory, change</text><text x="441" y="278">Pages, states,</text><text x="441" y="299">representative URLs</text><text x="599" y="278">Controlled and</text><text x="599" y="299">reproducible data</text><text x="757" y="278">Validate patterns</text><text x="757" y="299">and consequences</text><text x="915" y="278">Impact, scale,</text><text x="915" y="299">confidence, effort</text><text x="1073" y="278">Re-crawl and</text><text x="1073" y="299">measure</text></g>
+    <rect x="70" y="370" width="1060" height="210" rx="8" fill="#172a3a"/>
+    <text x="110" y="415" text-anchor="start" font-size="18" font-weight="700" fill="#9fc5ef">THE THREAD THROUGH EVERY PHASE</text>
+    <g text-anchor="start" font-size="19" fill="#ffffff"><text x="110" y="460">• Which template or state is affected?</text><text x="110" y="500">• Which user and search journey is interrupted?</text><text x="620" y="460">• What commercial value is exposed?</text><text x="620" y="500">• What evidence will prove the change worked?</text></g>
+    <text x="600" y="550" font-size="18" font-weight="700" fill="#f7c948">The audit is complete when the production result is verified, not when the deck is sent.</text>
+  </g>
+</svg>

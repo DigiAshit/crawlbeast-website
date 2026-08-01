@@ -167,6 +167,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     ? "Try CrawlBeast for faster technical SEO audits and agency-ready reports."
     : slug === "how-agencies-perform-seo-audits"
     ? "Use CrawlBeast to standardize technical SEO audits across client websites."
+    : slug === "website-crawler-for-agencies"
+    ? "Trial CrawlBeast on representative client sites and evaluate the resulting workflow."
+    : slug === "broken-link-checker"
+    ? "Use CrawlBeast to crawl a site locally, identify broken links, and organize the repair work."
+    : slug === "seo-audit-for-ecommerce"
+    ? "Use CrawlBeast to segment and prioritize technical issues across ecommerce templates."
     : "Use CrawlBeast to turn technical crawl findings into clearer client audit reports.";
 
   return (
