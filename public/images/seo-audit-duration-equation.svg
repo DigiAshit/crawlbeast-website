@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">SEO audit duration equation</title>
+  <desc id="desc">Audit duration grows with scope, evidence, complexity, decision depth, and delivery requirements.</desc>
+  <rect width="1200" height="660" fill="#f7f9fc"/>
+  <text x="60" y="72" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#172a3a">Five variables drive the timeline</text>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="54" y="135" width="190" height="190" rx="8" fill="#dcecff" stroke="#6d9ed4"/><text x="149" y="190" font-size="20" font-weight="700" fill="#174a7e">SCOPE</text><text x="149" y="232" font-size="16" fill="#31465a">Properties</text><text x="149" y="260" font-size="16" fill="#31465a">Markets</text><text x="149" y="288" font-size="16" fill="#31465a">Workstreams</text>
+    <text x="265" y="245" font-size="34" fill="#6b7f93">+</text>
+    <rect x="286" y="135" width="190" height="190" rx="8" fill="#e4f6ed" stroke="#5eae83"/><text x="381" y="190" font-size="20" font-weight="700" fill="#176b4b">EVIDENCE</text><text x="381" y="232" font-size="16" fill="#31465a">Access</text><text x="381" y="260" font-size="16" fill="#31465a">Sources</text><text x="381" y="288" font-size="16" fill="#31465a">Reconciliation</text>
+    <text x="497" y="245" font-size="34" fill="#6b7f93">+</text>
+    <rect x="518" y="135" width="190" height="190" rx="8" fill="#fff0dc" stroke="#dda158"/><text x="613" y="190" font-size="20" font-weight="700" fill="#8a4b00">COMPLEXITY</text><text x="613" y="232" font-size="16" fill="#31465a">Templates</text><text x="613" y="260" font-size="16" fill="#31465a">Rendering</text><text x="613" y="288" font-size="16" fill="#31465a">History</text>
+    <text x="729" y="245" font-size="34" fill="#6b7f93">+</text>
+    <rect x="750" y="135" width="190" height="190" rx="8" fill="#f0eafb" stroke="#9274c4"/><text x="845" y="190" font-size="20" font-weight="700" fill="#55348d">DECISIONS</text><text x="845" y="232" font-size="16" fill="#31465a">Root cause</text><text x="845" y="260" font-size="16" fill="#31465a">Priority</text><text x="845" y="288" font-size="16" fill="#31465a">Feasibility</text>
+    <text x="961" y="245" font-size="34" fill="#6b7f93">+</text>
+    <rect x="982" y="135" width="164" height="190" rx="8" fill="#ffe8e4" stroke="#d56d60"/><text x="1064" y="190" font-size="20" font-weight="700" fill="#9b3428">DELIVERY</text><text x="1064" y="232" font-size="16" fill="#31465a">Tickets</text><text x="1064" y="260" font-size="16" fill="#31465a">Reviews</text><text x="1064" y="288" font-size="16" fill="#31465a">Validation</text>
+    <path d="M600 350v74" stroke="#6b7f93" stroke-width="5"/><path d="m584 409 16 18 16-18" fill="none" stroke="#6b7f93" stroke-width="5"/>
+    <rect x="260" y="445" width="680" height="118" rx="8" fill="#172a3a"/>
+    <text x="600" y="490" font-size="19" font-weight="700" fill="#9fc5ef">REALISTIC AUDIT DURATION</text>
+    <text x="600" y="532" font-size="24" font-weight="700" fill="#ffffff">Estimate from the work, not URL count alone</text>
+  </g>
+  <text x="600" y="620" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#51677b">Narrow the decision or phase the delivery when the combined scope is too large.</text>
+</svg>

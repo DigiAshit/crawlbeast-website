@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">WordPress SEO audit workflow</title><desc id="desc">Seven stages move from backup and crawl to ownership, implementation, and validation.</desc>
+  <rect width="1200" height="680" fill="#f7f9fc"/><text x="60" y="68" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#172a3a">A safe outside-in WordPress audit</text>
+  <path d="M115 175h970" stroke="#aab8c8" stroke-width="6"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g><circle cx="115" cy="175" r="34" fill="#174a7e"/><circle cx="277" cy="175" r="34" fill="#174a7e"/><circle cx="439" cy="175" r="34" fill="#176b4b"/><circle cx="601" cy="175" r="34" fill="#176b4b"/><circle cx="763" cy="175" r="34" fill="#8a4b00"/><circle cx="925" cy="175" r="34" fill="#55348d"/><circle cx="1085" cy="175" r="34" fill="#9b3428"/></g>
+    <g fill="#ffffff" font-size="20" font-weight="700"><text x="115" y="182">1</text><text x="277" y="182">2</text><text x="439" y="182">3</text><text x="601" y="182">4</text><text x="763" y="182">5</text><text x="925" y="182">6</text><text x="1085" y="182">7</text></g>
+    <g fill="#172a3a" font-size="17" font-weight="700"><text x="115" y="238">PROTECT</text><text x="277" y="238">CRAWL</text><text x="439" y="238">INVENTORY</text><text x="601" y="238">DIAGNOSE</text><text x="763" y="238">PRIORITIZE</text><text x="925" y="238">IMPLEMENT</text><text x="1085" y="238">VERIFY</text></g>
+    <g fill="#51677b" font-size="14"><text x="115" y="270">Backup + versions</text><text x="277" y="270">Observe output</text><text x="439" y="270">Core + theme</text><text x="439" y="292">plugins + host</text><text x="601" y="270">Find owner</text><text x="763" y="270">Impact + risk</text><text x="925" y="270">Stage + rollback</text><text x="1085" y="270">Re-crawl + monitor</text></g>
+    <rect x="90" y="365" width="1020" height="190" rx="8" fill="#172a3a"/><text x="600" y="410" font-size="18" font-weight="700" fill="#9fc5ef">DEFINITION OF DONE</text><text x="600" y="455" font-size="21" fill="#ffffff">The intended output is visible in production, the old pattern is gone,</text><text x="600" y="490" font-size="21" fill="#ffffff">critical journeys still work, and monitoring has a baseline.</text><text x="600" y="530" font-size="17" font-weight="700" fill="#f7c948">A dashboard setting alone is not proof.</text>
+  </g>
+</svg>

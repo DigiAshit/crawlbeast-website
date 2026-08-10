@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">SEO audit time bottleneck map</title>
+  <desc id="desc">The map separates valuable analysis from avoidable waiting and rework.</desc>
+  <rect width="1200" height="700" fill="#f7f9fc"/>
+  <text x="60" y="68" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#172a3a">Where audit time creates value and where it leaks</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="60" y="110" width="520" height="500" rx="8" fill="#e4f6ed" stroke="#5eae83" stroke-width="2"/>
+    <text x="95" y="155" font-size="22" font-weight="700" fill="#176b4b">NECESSARY ANALYSIS</text>
+    <g font-size="18" fill="#31465a"><text x="95" y="210">✓ Define the business decision</text><text x="95" y="260">✓ Reconcile dated evidence</text><text x="95" y="310">✓ Sample templates and states</text><text x="95" y="360">✓ Validate tool warnings</text><text x="95" y="410">✓ Diagnose the responsible system</text><text x="95" y="460">✓ Prioritize impact and feasibility</text><text x="95" y="510">✓ Write acceptance criteria</text><text x="95" y="560">✓ Plan production validation</text></g>
+    <rect x="620" y="110" width="520" height="500" rx="8" fill="#fff0ed" stroke="#d56d60" stroke-width="2"/>
+    <text x="655" y="155" font-size="22" font-weight="700" fill="#9b3428">AVOIDABLE DELAY</text>
+    <g font-size="18" fill="#31465a"><text x="655" y="210">× Start before access is ready</text><text x="655" y="260">× Rebuild the same crawl settings</text><text x="655" y="310">× Expand scope without change control</text><text x="655" y="360">× Review every URL equally</text><text x="655" y="410">× Copy warnings into slides</text><text x="655" y="460">× Reformat findings several times</text><text x="655" y="510">× Wait to release urgent findings</text><text x="655" y="560">× Leave review dates undefined</text></g>
+  </g>
+  <rect x="60" y="635" width="1080" height="42" rx="5" fill="#172a3a"/>
+  <text x="600" y="662" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff">Automate repeated collection and formatting; protect validation, diagnosis, and decisions.</text>
+</svg>

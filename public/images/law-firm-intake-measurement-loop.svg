@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">Law firm intake measurement loop</title><desc id="desc">Search landing pages lead to calls and forms, qualification, accepted matters, and feedback to SEO priorities.</desc>
+  <rect width="1200" height="650" fill="#f7f9fc"/><text x="60" y="70" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#172a3a">Measure beyond traffic without exposing case details</text>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="60" y="150" width="190" height="110" rx="7" fill="#dcecff" stroke="#6d9ed4"/><text x="155" y="195" font-size="18" font-weight="700" fill="#174a7e">SEARCH ENTRY</text><text x="155" y="226" font-size="15" fill="#31465a">Query + landing page</text>
+    <rect x="300" y="150" width="190" height="110" rx="7" fill="#e4f6ed" stroke="#5eae83"/><text x="395" y="195" font-size="18" font-weight="700" fill="#176b4b">CONTACT</text><text x="395" y="226" font-size="15" fill="#31465a">Call or form event</text>
+    <rect x="540" y="150" width="190" height="110" rx="7" fill="#fff0dc" stroke="#dda158"/><text x="635" y="195" font-size="18" font-weight="700" fill="#8a4b00">QUALIFY</text><text x="635" y="226" font-size="15" fill="#31465a">Appropriate matter</text>
+    <rect x="780" y="150" width="190" height="110" rx="7" fill="#f0eafb" stroke="#9274c4"/><text x="875" y="195" font-size="18" font-weight="700" fill="#55348d">CONSULT</text><text x="875" y="226" font-size="15" fill="#31465a">Consultation held</text>
+    <rect x="1020" y="150" width="140" height="110" rx="7" fill="#ffe8e4" stroke="#d56d60"/><text x="1090" y="195" font-size="18" font-weight="700" fill="#9b3428">OUTCOME</text><text x="1090" y="226" font-size="15" fill="#31465a">Accepted fit</text>
+    <path d="M250 205h48M490 205h48M730 205h48M970 205h48" stroke="#6b7f93" stroke-width="4"/>
+    <path d="M1090 260v110H155v-108" fill="none" stroke="#6b7f93" stroke-width="4" stroke-dasharray="10 8"/>
+    <rect x="275" y="355" width="650" height="120" rx="7" fill="#172a3a"/><text x="600" y="400" font-size="18" font-weight="700" fill="#9fc5ef">PRIVACY-AWARE FEEDBACK</text><text x="600" y="438" font-size="19" fill="#ffffff">Improve page and channel priorities using qualified outcomes,</text><text x="600" y="464" font-size="19" fill="#ffffff">without sending confidential matter details into analytics.</text>
+  </g>
+  <text x="600" y="555" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172a3a">Document attribution limits. Do not claim that one SEO change caused every matter.</text>
+</svg>
