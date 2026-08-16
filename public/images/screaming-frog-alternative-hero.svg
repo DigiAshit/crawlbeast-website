@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Screaming Frog alternatives decision guide</title>
+  <desc id="desc">Six different crawler workflows branch from the jobs an SEO team needs to complete.</desc>
+  <rect width="1200" height="630" fill="#f7f9fc"/>
+  <rect x="58" y="52" width="1084" height="526" rx="8" fill="#ffffff" stroke="#ccd5e1" stroke-width="2"/>
+  <rect x="58" y="52" width="1084" height="70" rx="8" fill="#172a3a"/>
+  <text x="94" y="97" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff">FIND THE RIGHT SCREAMING FROG ALTERNATIVE</text>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="410" y="166" width="380" height="82" rx="8" fill="#fff3e4" stroke="#e5a24b" stroke-width="2"/>
+    <text x="600" y="201" font-size="20" font-weight="700" fill="#8a4b00">WHAT IS MISSING?</text><text x="600" y="229" font-size="16" fill="#31465a">Guidance, collaboration, scale, or a simpler handoff?</text>
+    <path d="M600 250v52M198 300h804" stroke="#6b7f93" stroke-width="4"/>
+    <g font-size="17" fill="#172a3a">
+      <rect x="94" y="322" width="200" height="142" rx="7" fill="#eaf3ff" stroke="#77a8de" stroke-width="2"/><text x="194" y="364" font-weight="700">CRAWLBEAST</text><text x="194" y="395">Focused local</text><text x="194" y="420">prioritization</text>
+      <rect x="338" y="322" width="200" height="142" rx="7" fill="#eaf7ef" stroke="#69b78d" stroke-width="2"/><text x="438" y="364" font-weight="700">SITEBULB</text><text x="438" y="395">Guided visual</text><text x="438" y="420">audits</text>
+      <rect x="662" y="322" width="200" height="142" rx="7" fill="#f1edfb" stroke="#9a82c7" stroke-width="2"/><text x="762" y="364" font-weight="700">SUITE TOOLS</text><text x="762" y="395">Semrush or Ahrefs</text><text x="762" y="420">in one stack</text>
+      <rect x="906" y="322" width="200" height="142" rx="7" fill="#fff0dc" stroke="#dda158" stroke-width="2"/><text x="1006" y="364" font-weight="700">ENTERPRISE</text><text x="1006" y="395">JetOctopus</text><text x="1006" y="420">or Lumar</text>
+    </g>
+    <text x="600" y="530" font-size="20" font-weight="700" fill="#172a3a">KEEP SCREAMING FROG WHEN GRANULAR CONTROL IS THE JOB.</text>
+  </g>
+</svg>

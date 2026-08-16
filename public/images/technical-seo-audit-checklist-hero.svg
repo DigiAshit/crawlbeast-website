@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Technical SEO audit checklist</title>
+  <desc id="desc">A priority-first technical SEO checklist moves from search access through site architecture to validation.</desc>
+  <rect width="1200" height="630" fill="#f7f9fc"/>
+  <rect x="65" y="56" width="1070" height="520" rx="8" fill="#ffffff" stroke="#ccd5e1" stroke-width="2"/>
+  <rect x="65" y="56" width="1070" height="70" rx="8" fill="#172a3a"/>
+  <text x="103" y="101" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff">TECHNICAL SEO AUDIT: PRIORITY-FIRST CHECKLIST</text>
+  <g font-family="Arial, sans-serif" font-size="18">
+    <g fill="#eaf3ff" stroke="#77a8de" stroke-width="2"><rect x="115" y="174" width="220" height="116" rx="7"/><rect x="385" y="174" width="220" height="116" rx="7"/></g>
+    <g fill="#eaf7ef" stroke="#69b78d" stroke-width="2"><rect x="655" y="174" width="220" height="116" rx="7"/><rect x="925" y="174" width="160" height="116" rx="7"/></g>
+    <g fill="#fff3e4" stroke="#e5a24b" stroke-width="2"><rect x="250" y="362" width="220" height="116" rx="7"/><rect x="520" y="362" width="220" height="116" rx="7"/><rect x="790" y="362" width="220" height="116" rx="7"/></g>
+    <g text-anchor="middle" fill="#172a3a"><text x="225" y="219" font-weight="700">1. BASELINE</text><text x="225" y="251">Access and evidence</text><text x="495" y="219" font-weight="700">2. CRAWL</text><text x="495" y="251">Scope and validate</text><text x="765" y="219" font-weight="700">3. INDEX</text><text x="765" y="251">Robots, sitemaps, canonicals</text><text x="1005" y="219" font-weight="700">4. URLS</text><text x="1005" y="251">Status and redirects</text><text x="360" y="407" font-weight="700">5. ARCHITECTURE</text><text x="360" y="439">Links and depth</text><text x="630" y="407" font-weight="700">6. EXPERIENCE</text><text x="630" y="439">Performance and rendering</text><text x="900" y="407" font-weight="700">7. VERIFY</text><text x="900" y="439">Owners and re-crawl</text></g>
+    <path d="M335 232h42M605 232h42M875 232h42M1005 291v28H360v42M470 420h42M740 420h42" fill="none" stroke="#6b7f93" stroke-width="4"/>
+  </g>
+</svg>

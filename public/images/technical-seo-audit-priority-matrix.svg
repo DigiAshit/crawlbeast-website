@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Technical SEO audit priority matrix</title>
+  <desc id="desc">An impact and confidence matrix separates urgent validated blockers from items that need more evidence.</desc>
+  <rect width="1200" height="640" fill="#f7f9fc"/>
+  <text x="70" y="76" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#172a3a">Prioritize evidence, not warning counts</text>
+  <rect x="245" y="135" width="720" height="380" fill="#ffffff" stroke="#cbd6e2" stroke-width="2"/>
+  <path d="M605 135v380M245 325h720" stroke="#cbd6e2" stroke-width="2"/>
+  <rect x="607" y="137" width="356" height="186" fill="#ffe9e2"/><rect x="247" y="327" width="356" height="186" fill="#edf3f8"/><rect x="607" y="327" width="356" height="186" fill="#eaf7ef"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle"><text x="785" y="188" font-size="22" font-weight="700" fill="#8d311f">FIX FIRST</text><text x="785" y="220" font-size="17" fill="#31465a">High impact, high confidence</text><text x="425" y="380" font-size="21" font-weight="700" fill="#51677b">INVESTIGATE</text><text x="425" y="412" font-size="17" fill="#31465a">Low confidence or unclear scope</text><text x="785" y="380" font-size="21" font-weight="700" fill="#176b4b">PLAN AND VERIFY</text><text x="785" y="412" font-size="17" fill="#31465a">Valuable, but not a current blocker</text></g>
+  <text x="605" y="570" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#31465a">Impact on business-critical pages and scale</text>
+  <text x="108" y="330" text-anchor="middle" transform="rotate(-90 108 330)" font-family="Arial, sans-serif" font-size="18" fill="#31465a">Confidence in evidence</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Crawler comparison trial scorecard</title>
+  <desc id="desc">A scorecard compares two crawl tools against the same site, evidence, and client handoff requirements.</desc>
+  <rect width="1200" height="640" fill="#f7f9fc"/>
+  <text x="70" y="76" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#172a3a">A fair crawler trial uses the same evidence</text>
+  <g font-family="Arial, sans-serif" font-size="18">
+    <rect x="70" y="126" width="1060" height="394" rx="8" fill="#ffffff" stroke="#cbd6e2" stroke-width="2"/>
+    <rect x="70" y="126" width="1060" height="60" rx="8" fill="#172a3a"/>
+    <text x="105" y="164" fill="#ffffff" font-weight="700">CRITERION</text><text x="675" y="164" fill="#ffffff" font-weight="700">EVIDENCE TO KEEP</text><text x="1000" y="164" fill="#ffffff" font-weight="700">SCORE</text>
+    <g fill="#31465a">
+      <text x="105" y="235">Known issues found</text><text x="675" y="235">Affected URL, source, response, crawl date</text><text x="1000" y="235">/ 5</text>
+      <text x="105" y="305">Settings and rendering fit</text><text x="675" y="305">Saved configuration and exclusions</text><text x="1000" y="305">/ 5</text>
+      <text x="105" y="375">Prioritization and diagnosis</text><text x="675" y="375">Pattern, scale, impact, confidence</text><text x="1000" y="375">/ 5</text>
+      <text x="105" y="445">Client or developer handoff</text><text x="675" y="445">Recommendation, owner, acceptance criteria</text><text x="1000" y="445">/ 5</text>
+    </g>
+    <path d="M92 258h1016M92 328h1016M92 398h1016" stroke="#d7e0ea" stroke-width="2"/>
+  </g>
+  <rect x="70" y="554" width="1060" height="46" rx="6" fill="#eaf3ff"/>
+  <text x="600" y="585" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#174a7e">A polished demo cannot replace a representative crawl and a real handoff test.</text>
+</svg>

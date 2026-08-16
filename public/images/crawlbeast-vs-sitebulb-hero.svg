@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">CrawlBeast versus Sitebulb comparison</title>
+  <desc id="desc">A balanced side-by-side view helps an SEO team select a crawler based on its workflow.</desc>
+  <rect width="1200" height="630" fill="#f7f9fc"/>
+  <rect x="60" y="54" width="1080" height="522" rx="8" fill="#ffffff" stroke="#ccd5e1" stroke-width="2"/>
+  <rect x="60" y="54" width="1080" height="72" rx="8" fill="#172a3a"/>
+  <text x="96" y="99" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff">CHOOSE THE WORKFLOW, NOT A LOGO</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="104" y="168" width="430" height="254" rx="8" fill="#eaf3ff" stroke="#77a8de" stroke-width="2"/>
+    <text x="138" y="215" font-size="29" font-weight="700" fill="#174a7e">CRAWLBEAST</text>
+    <text x="138" y="252" font-size="17" fill="#31465a">Local crawl-to-action workflow</text>
+    <text x="138" y="294" font-size="17" fill="#31465a">• Prioritized issue review</text>
+    <text x="138" y="328" font-size="17" fill="#31465a">• Multi-project agency view</text>
+    <text x="138" y="362" font-size="17" fill="#31465a">• Pre-launch: test current fit</text>
+    <rect x="666" y="168" width="430" height="254" rx="8" fill="#eaf7ef" stroke="#69b78d" stroke-width="2"/>
+    <text x="700" y="215" font-size="29" font-weight="700" fill="#176b4b">SITEBULB</text>
+    <text x="700" y="252" font-size="17" fill="#31465a">Mature desktop and cloud audit platform</text>
+    <text x="700" y="294" font-size="17" fill="#31465a">• Prioritized hints and education</text>
+    <text x="700" y="328" font-size="17" fill="#31465a">• Visual explanations and reports</text>
+    <text x="700" y="362" font-size="17" fill="#31465a">• Test plan, limits, and team needs</text>
+    <path d="M554 290h92" stroke="#6b7f93" stroke-width="4"/><path d="m632 280 14 10-14 10" fill="none" stroke="#6b7f93" stroke-width="4"/>
+    <rect x="166" y="466" width="868" height="66" rx="7" fill="#172a3a"/>
+    <text x="600" y="507" text-anchor="middle" font-size="20" font-weight="700" fill="#ffffff">RUN THE SAME REPRESENTATIVE CRAWL, THEN SCORE THE HANDOFF.</text>
+  </g>
+</svg>
