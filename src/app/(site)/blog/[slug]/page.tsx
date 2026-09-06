@@ -185,6 +185,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     ? "Trial CrawlBeast alongside your existing crawler on a representative client site."
     : slug === "technical-seo-audit-checklist"
     ? "Use CrawlBeast to collect local crawl evidence, prioritize technical patterns, and prepare a validated repair backlog."
+    : slug === "common-seo-audit-mistakes"
+    ? "Use CrawlBeast to collect local crawl evidence, group technical patterns, and prioritize the fixes worth validating."
+    : slug === "seo-audit-for-saas"
+    ? "Use CrawlBeast to crawl public SaaS surfaces locally and prioritize the technical patterns that need an owner."
+    : slug === "shopify-seo-audit"
+    ? "Use CrawlBeast to crawl Shopify output locally and prioritize recurring product, collection, link, and canonical patterns."
+    : slug === "crawlbeast-vs-ahrefs"
+    ? "Trial CrawlBeast against a representative client crawl and evaluate the complete handoff, not only the issue count."
+    : slug === "sitebulb-alternative"
+    ? "Trial CrawlBeast against a representative client crawl and compare the resulting prioritization and handoff."
+    : slug === "what-is-a-technical-seo-audit"
+    ? "Use CrawlBeast to collect local technical SEO evidence and prioritize the patterns that deserve a validated fix."
     : "Use CrawlBeast to turn technical crawl findings into clearer client audit reports.";
 
   return (
