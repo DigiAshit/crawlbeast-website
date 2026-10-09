@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { createClient } from 'next-sanity'
-import nodemailer from 'nodemailer'
+import { sendNotificationEmail } from '@/lib/resend'
 
 const writeClient = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'u4287n71',
@@ -69,36 +69,18 @@ ${message.trim()}
 
 Submitted: ${timestamp}`
 
-    const host = process.env.SMTP_HOST
-    const port = parseInt(process.env.SMTP_PORT || '587', 10)
-    const user = process.env.SMTP_USER
-    const pass = process.env.SMTP_PASS
-    const toEmail = process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER || 'support@crawlbeast.com'
+    const emailId = await sendNotificationEmail({
+      subject: emailSubject,
+      text: emailBody,
+      replyTo: email.trim(),
+    })
 
-    if (host && user && pass) {
-      const transporter = nodemailer.createTransport({
-        host,
-        port,
-        secure: port === 465,
-        auth: { user, pass },
-      })
-
-      await transporter.sendMail({
-        from: `"CrawlBeast Contacts" <${user}>`,
-        to: toEmail,
-        subject: emailSubject,
-        text: emailBody,
-      })
-      console.log(`Email contact notification sent to ${toEmail}`)
-    } else {
-      console.log('--- SMTP Not Configured. Printing Contact Email Notification ---')
-      console.log(`Subject: ${emailSubject}`)
-      console.log(emailBody)
-      console.log('----------------------------------------------------------------')
+    if (emailId) {
+      console.log(`Resend contact notification sent (${emailId})`)
     }
 
     return NextResponse.json({ success: true, docId })
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error handling contact form submission:', error)
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
   }

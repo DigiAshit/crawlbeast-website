@@ -16,6 +16,18 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Email notifications
+
+Contact and lead notifications are sent with Resend. Add these server-side environment variables locally and in Vercel:
+
+```bash
+RESEND_API_KEY=re_your_real_api_key
+RESEND_FROM_EMAIL=onboarding@resend.dev
+NOTIFICATION_EMAIL=marketing.boutiques@gmail.com
+```
+
+Replace `re_your_real_api_key` with your real Resend API key. After verifying your own domain in Resend, replace `onboarding@resend.dev` with an address on that domain.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
